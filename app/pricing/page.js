@@ -1,9 +1,9 @@
-import Image from 'next/image'
+import React from 'react'
 
-export default function Home() {
-    return (
-        <div>
-            le prix oklm
-        </div>
-    )
+const pricing = () => {
+  return (
+    <div>pricing</div>
+  )
 }
+
+export default pricing
