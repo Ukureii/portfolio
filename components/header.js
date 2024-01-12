@@ -1,7 +1,6 @@
 import { Flex, Heading, Text, Input, Button } from "@chakra-ui/react"
-import Head from "next/head"
 
-const header = () => {
+const Header = () => {
   return (
     <>
         <Flex p="2rem" direction="column" alignItems="center">
@@ -12,4 +11,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header
