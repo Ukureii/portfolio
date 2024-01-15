@@ -12,7 +12,6 @@ const ExampleComponent = () => {
       setIsToggle((prevValue) => !prevValue);
     }, 1500);
 
-    // Nettoyez l'intervalle lorsque le composant est démonté
     return () => clearInterval(intervalId);
   }, []);
 
@@ -25,7 +24,6 @@ const ExampleComponent = () => {
   );
 };
 
-// Utilisez ExampleComponent dans votre composant principal
 function Home() {
   return <ExampleComponent />;
 }

@@ -1,5 +1,4 @@
-import { Flex, Heading, Text, Input, Button } from "@chakra-ui/react"
-import Head from "next/head"
+import { Flex, Heading, Text } from "@chakra-ui/react"
 
 const Header = () => {
   return (
