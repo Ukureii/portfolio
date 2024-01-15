@@ -1,4 +1,7 @@
 import React from 'react';
+import { IconButton } from '@chakra-ui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import {
   Button,
   Drawer,
@@ -18,12 +21,11 @@ function Drawing() {
 
   return (
     <>
-      <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-        Open
-      </Button>
+      <IconButton variant='ghost' size="sm" aria-label='Done' fontSize='18px' onClick={onOpen} >
+        <FontAwesomeIcon icon={faUser} style={{ paddingBottom: '2px' }} />
+      </IconButton>
       <Drawer
         isOpen={isOpen}
-        placement='right'
         onClose={onClose}
         finalFocusRef={btnRef}
       >
