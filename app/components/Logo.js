@@ -6,7 +6,7 @@ export default function Logo(props) {
     <Box {...props}>
       <Link href="/">
         <Text className="logo" fontSize="lg" fontWeight="bold">
-          BetterStemic
+          Bird
         </Text>
       </Link>
     </Box>

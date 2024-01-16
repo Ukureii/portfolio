@@ -23,7 +23,7 @@ const Navbar = () => {
             <Link href="/about">
               <Button variant='ghost' size="sm">About Us</Button>
             </Link>
-            <Link href="/mescartes">
+            <Link href="/cartes">
               <Button variant='ghost' size="sm">Mes cartes</Button>
             </Link>
             <Drawing/>

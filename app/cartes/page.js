@@ -1,5 +1,5 @@
 import React from 'react'
-import Carte from '@/components/Carte'
+import Carte from '@/app/components/Carte'
 
 const contact = () => {
   return (

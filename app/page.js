@@ -1,9 +1,9 @@
 'use client'
 import { useState, useEffect, useDisclosure } from "react"
-import Navbar from "@/components/Navbar";
-import Header from "@/components/Header";
-import HomePage from "@/components/HomePage";
-import Footer from "@/components/Footer";
+import Navbar from "@/app/components/Navbar";
+import Header from "@/app/components/Header";
+import HomePage from "@/app/components/HomePage";
+import Footer from "@/app/components/Footer";
 // import UserIcon from "@/components/UserIcon";
 
 const ExampleComponent = () => {
