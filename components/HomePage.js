@@ -47,7 +47,8 @@ export default function HomePage() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-          Utilisez BetterStemic pour cartographier sous forme d’une carte mentale des situations ou des enjeux et comprendre leur complexité. Visualisez et agissez !
+            Utilisez BetterStemic pour cartographier sous forme d’une carte mentale des situations 
+            ou des enjeux et comprendre leur complexité. Visualisez et agissez !
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
             <Button
@@ -65,7 +66,7 @@ export default function HomePage() {
               size={'lg'}
               fontWeight={'normal'}
               px={6}
-              leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
+            >
               How It Works
             </Button>
           </Stack>

@@ -1,8 +1,11 @@
 import React from 'react'
+import Carte from '@/components/Carte'
 
 const contact = () => {
   return (
-    <div>contact</div>
+    <>
+      <Carte/>
+    </>
   )
 }
 

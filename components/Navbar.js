@@ -20,14 +20,11 @@ const Navbar = () => {
           justify={"flex-end"}
           direction={["column", "row", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}>
-            <Link href="/">
-              <Button variant='ghost' size="sm">Home</Button>
-            </Link>
             <Link href="/about">
               <Button variant='ghost' size="sm">About Us</Button>
             </Link>
-            <Link href="/contact">
-              <Button variant='ghost' size="sm">Contact</Button>
+            <Link href="/mescartes">
+              <Button variant='ghost' size="sm">Mes cartes</Button>
             </Link>
             <Drawing/>
           </Stack>
