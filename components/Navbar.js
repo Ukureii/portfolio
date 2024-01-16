@@ -33,8 +33,8 @@ const Navbar = () => {
           </Stack>
         </div>
       </nav>
+      <Divider orientation='horizontal' borderWidth="1sp"/>
     </header>
-    <Divider orientation='horizontal' />
     </>
   );
 };

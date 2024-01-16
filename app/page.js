@@ -2,7 +2,9 @@
 import { useState, useEffect, useDisclosure } from "react"
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
-import UserIcon from "@/components/UserIcon";
+import HomePage from "@/components/HomePage";
+import Footer from "@/components/Footer";
+// import UserIcon from "@/components/UserIcon";
 
 const ExampleComponent = () => {
   const [isToggle, setIsToggle] = useState(true);
@@ -17,10 +19,13 @@ const ExampleComponent = () => {
 
   return (
     <>
-      <Navbar />
-      <Header />
-      <UserIcon showBadge={isToggle} />
+      <Navbar />  
+      <br/>
+      <HomePage />
+      <br/><br/>
+      <Footer />
     </>
+    // <UserIcon showBadge={isToggle} />
   );
 };
 
