@@ -8,7 +8,7 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEarthEurope } from '@fortawesome/free-solid-svg-icons'
+import { faEarthEurope, faBars } from '@fortawesome/free-solid-svg-icons'
 import MenuDeroulant from './MenuDeroulant'
 
 const data = {
@@ -31,14 +31,19 @@ function Carte() {
           shadow="sm"
           position="relative"
           transition="box-shadow 0.3s ease"
+          zIndex={1}
             _hover={{ 
             boxShadow: 'xl',
           }}
           >
-            <MenuDeroulant size="10px" position="absolute" top={2} right={2} />
-            <Image src={data.imageURL} alt={`Picture of ${data.name}`} roundedTop="lg" />
+            <Box position="absolute" top={2} right={2} zIndex={2}>
+              <MenuDeroulant />
+            </Box>
+            
 
-            <Box p="4" fontSize={20}>
+            <Image src={data.imageURL} alt={`Picture of ${data.name}`} roundedTop="lg" h='200px' w='300px' zIndex={1} />
+
+            <Box p="4" fontSize={18}>
               <Flex justifyContent="space-between" alignContent="center">
                 <Box>
                 {data.name}
