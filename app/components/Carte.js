@@ -9,20 +9,19 @@ const data = {
   imageURL: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=4600&q=80',
   name: 'Carte de Léa',
   isPublic: true,
-  lastModif: '',
 };
 
 function Carte() {
-  const [isEditing, setIsEditing] = useState(false);
   const [editableValue, setEditableValue] = useState(data.name);
+  const [isEditing, setIsEditing] = useState(false);
 
-  const handleRenameClick = () => {
+  const handleRename = () => {
     setIsEditing(true);
   };
 
-  const handleEditComplete = () => {
-    setIsEditing(false);
-    console.log('Editing complete. New value:', editableValue);
+  const handleTitleChange = (value) => {
+    setEditableValue(value);
+    setIsEditing(false); 
   };
 
   return (
@@ -41,20 +40,20 @@ function Carte() {
           }}
         >
           <Box position="absolute" top={2} right={2} zIndex={2}>
-            <MenuDeroulant onRenameClick={handleRenameClick} />
+            <MenuDeroulant onRenameClick={handleRename} />
           </Box>
 
-          <Image src={data.imageURL} alt={`Picture of ${data.name}`} roundedTop="lg" maxW="300px" zIndex={1} />
+          <Image src={data.imageURL} alt={`Picture of ${data.name}`} roundedTop="lg" maxW="300px" maxH="200px" width='100%' height='100%' objectFit="cover" zIndex={1} />
 
           <Box p="4" fontSize={18}>
             <Flex justifyContent="space-between" alignContent="center">
               <Box>
                 <Editable
                   defaultValue={editableValue}
+                  onChange={(value) => handleTitleChange(value)}
                   isEditing={isEditing}
-                  onChange={(value) => setEditableValue(value)}
-                  onSubmit={handleEditComplete}
                   width={200}
+                  variant='flushed'
                 >
                   <EditablePreview />
                   <EditableInput />
