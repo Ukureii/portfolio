@@ -39,15 +39,15 @@ export default function HomePage() {
                 bg: 'red.300',
                 zIndex: -1,
               }}>
-              Stemic,
+              Bird,
             </Text>
             <br />
             <Text as={'span'} color={'red.300'}>
-              mais en mieux !
+              lorem ipsum !
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            Utilisez BetterStemic pour cartographier sous forme d’une carte mentale des situations 
+            Utilisez Bird pour cartographier sous forme d’une carte mentale des situations 
             ou des enjeux et comprendre leur complexité. Visualisez et agissez !
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
