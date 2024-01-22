@@ -15,7 +15,7 @@ import {
 
 export default function HomePage() {
   return (
-    <Container maxW={'7xl'} width={1000}>
+    <Container maxW={'7xl'} width="100%" mx="auto" overflowX="hidden">
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
@@ -78,7 +78,7 @@ export default function HomePage() {
           position={'relative'}
           w={'full'}>
           <Blob
-            w={'150%'}
+            w={'107%'}
             h={'150%'}
             position={'absolute'}
             top={'-20%'}
@@ -90,7 +90,7 @@ export default function HomePage() {
             position={'relative'}
             height={'300px'}
             rounded={'2xl'}
-            boxShadow={'2xl'}
+            boxShadow={'xl'}
             width={'full'}
             overflow={'hidden'}>
             <Image

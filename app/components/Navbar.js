@@ -24,7 +24,7 @@ const Navbar = () => {
               <Button variant='ghost' size="sm">About Us</Button>
             </Link>
             <Link href="/cartes">
-              <Button variant='ghost' size="sm">Mes cartes</Button>
+              <Button variant='ghost' size="sm">Mes Cartes</Button>
             </Link>
             <Drawing/>
           </Stack>

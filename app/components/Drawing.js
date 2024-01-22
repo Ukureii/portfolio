@@ -14,7 +14,6 @@ import {
   InputRightElement,
   useDisclosure,
   IconButton,
-  Divider,
   Link,
 } from '@chakra-ui/react';
 
@@ -51,7 +50,7 @@ function Drawing() {
   return (
     <>
       <IconButton variant='ghost' size="sm" aria-label='Done' fontSize='18px' onClick={onOpen} >
-        <FontAwesomeIcon icon={faUser} style={{ paddingBottom: '2px' }} />
+        <FontAwesomeIcon icon={faUser} />
       </IconButton>
       <Drawer
         isOpen={isOpen}
@@ -74,29 +73,10 @@ function Drawing() {
             >
               <Input isRequired focusBorderColor='red.200' name='nickname' placeholder='Identifiant' mb='2' />
               <PasswordInput />
-              <div style={{ textAlign: 'right', marginRight: '2px', marginBottom: '20px'}}>
+              <div style={{ textAlign: 'right', marginRight: '2px', marginBottom: '30px'}}>
                 <Link as='sub'>Mot de passe oublié</Link>
               </div>
               <Button type='submit' size='sm' width='full' form='login-form' colorScheme='orange'>Connexion</Button>
-            </form>
-
-            <Divider mt="60px" mb="12px"/>
-
-            <div>
-              Pas encore de compte ?
-            </div>
-
-            <form
-              id='insc-form'
-              onSubmit={(e) => {
-                e.preventDefault()
-                console.log('submitted')
-              }}
-            >
-              <Input isRequired focusBorderColor='red.200' name='nickname' placeholder='Identifiant' mt='20px' mb='2' />
-              <Input isRequired focusBorderColor='red.200' name='mail' placeholder='Adresse e-mail' mb='2' />
-              <PasswordInput />
-              <Button type='submit' size='sm' width='full' form='insc-form' colorScheme='orange' marginTop='20px'>Créer mon compte</Button>
             </form>
           </DrawerBody>
 
