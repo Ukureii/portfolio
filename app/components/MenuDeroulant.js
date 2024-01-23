@@ -7,7 +7,7 @@ import { faThumbTack, faPenToSquare, faTrashCan, faShareFromSquare } from '@fort
 
 const MenuDeroulant = ({ onRenameClick }) => {
   return (
-    <Menu isLazy>
+    <Menu isLazy zIndex={3}>
       <MenuButton
         as={IconButton}
         aria-label='Options'

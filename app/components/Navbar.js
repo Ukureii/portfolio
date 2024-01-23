@@ -1,3 +1,5 @@
+'use client'
+import { useState } from 'react';
 import {
   Box,
   Button,
@@ -23,7 +25,7 @@ const NavLink = (props) => {
   return (
     <Button
       as="a"
-      size={'sm'}
+      fontWeight={'normal'}
       variant={'ghost'}
       href={path}>
       {children}
@@ -34,6 +36,8 @@ const NavLink = (props) => {
 export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   return (
     <>
@@ -56,11 +60,17 @@ export default function WithAction() {
                 ))}
               </HStack>
             </HStack>
-            <Stack direction={'row'} spacing={5}>
-              <Button size={'sm'} fontSize='18px' variant={'ghost'} onClick={toggleColorMode}>
+            <Stack direction={'row'} spacing={4}>
+              <IconButton size={'sm'} fontSize='18px' variant={'ghost'} onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-              <Drawing/>
+              </IconButton>
+
+              {isLoggedIn ? (
+                <AvatarComponent />
+              ) : (
+                <Drawing/>
+              )}
+
             </Stack>
           </Flex>
 

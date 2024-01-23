@@ -42,11 +42,11 @@ export default function HomePage() {
               Bird,
             </Text>
             <br />
-            <Text as={'span'} color={'red.300'}>
+            <Text as={'span'} color={useColorModeValue('red.300', 'red.200')}>
               lorem ipsum !
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
+          <Text color={useColorModeValue('gray.500', 'gray.400')}>
             Utilisez Bird pour cartographier sous forme d’une carte mentale des situations 
             ou des enjeux et comprendre leur complexité. Visualisez et agissez !
           </Text>
@@ -57,8 +57,8 @@ export default function HomePage() {
               fontWeight={'normal'}
               px={6}
               colorScheme={'red'}
-              bg={'red.300'}
-              _hover={{ bg: 'red.400' }}>
+              bg={useColorModeValue('red.300', 'red.200')}
+              _hover={{ bg: useColorModeValue('red.400', 'red.300') }}>
               Get started
             </Button>
             <Button
@@ -84,7 +84,7 @@ export default function HomePage() {
             top={'-20%'}
             left={0}
             zIndex={-1}
-            color={useColorModeValue('red.50', 'red.400')}
+            color={useColorModeValue('red.50', 'gray.700')}
           />
           <Box
             position={'relative'}

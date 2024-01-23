@@ -15,7 +15,8 @@ import {
   useDisclosure,
   IconButton,
   Link,
-  Text
+  Text,
+  useColorModeValue
 } from '@chakra-ui/react';
 
 function emailRegex(input) {
@@ -91,8 +92,8 @@ function Drawing() {
                 form='login-form'
                 rounded={'full'}
                 colorScheme={'red'}
-                bg={'red.300'}
-                _hover={{ bg: 'red.400' }}>
+                bg={useColorModeValue('red.300', 'red.200')}
+                _hover={{ bg: useColorModeValue('red.400', 'red.300') }}>
                 Connexion
               </Button>
             </form>

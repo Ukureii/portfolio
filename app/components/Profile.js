@@ -54,7 +54,7 @@ export default function SocialProfileWithImage() {
         maxW={'420px'}
         minW={'260px'}
         w={'full'}
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('white', 'gray.700')}
         boxShadow={'2xl'}
         rounded={'xl'}
         overflow={'hidden'}>
@@ -81,9 +81,8 @@ export default function SocialProfileWithImage() {
           <Avatar
             size={'xl'}
             src='https://bit.ly/broken-link'
-            css={{
-              border: '4px solid white',
-            }}
+            borderColor={useColorModeValue('white', 'gray.700')}
+            borderWidth={5}
           />
         </Flex>
 
@@ -92,14 +91,14 @@ export default function SocialProfileWithImage() {
             <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
               John Doe
             </Heading>
-            <Text color={'gray'} fontWeight='light'>@choisi_ton_pseudo</Text>
+            <Text color={useColorModeValue('gray', 'gray.400')} fontWeight='light'>@choisi_ton_pseudo</Text>
 
             <Divider mt={5} mb={2}/>
 
             <Heading fontSize={'15px'} mb={1}>
               À propos de moi
             </Heading>
-            <Text color={'gray'} fontWeight='light'>
+            <Text color={useColorModeValue('gray', 'gray.400')}fontWeight='light'>
               Ajoute une biographie personnalisée sur ton profil !
             </Text>
           </Stack>
