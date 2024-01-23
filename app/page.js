@@ -1,10 +1,8 @@
 'use client'
 import { useState, useEffect, useDisclosure } from "react"
-import Navbar from "@/app/components/Navbar";
-import Header from "@/app/components/Header";
-import HomePage from "@/app/components/HomePage";
-import Footer from "@/app/components/Footer";
-// import UserIcon from "@/components/UserIcon";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
+import Footer from "./components/Footer";
 
 const ExampleComponent = () => {
   const [isToggle, setIsToggle] = useState(true);
@@ -25,7 +23,6 @@ const ExampleComponent = () => {
       <br/><br/>
       <Footer />
     </>
-    // <UserIcon showBadge={isToggle} />
   );
 };
 

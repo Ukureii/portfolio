@@ -1,39 +1,81 @@
-import React, { useState } from "react";
-import Drawing from "./Drawing";
-import Logo from "./Logo";
-import { Stack, Button, Link, Divider } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  useDisclosure,
+  Divider,
+  Stack,
+  useColorMode,
+} from '@chakra-ui/react';
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import Drawing from './Drawing';
+import Logo from './Logo';
 
-const Navbar = () => {
+const navLinks = [
+  { name: 'Profil', path: '/about' },
+  { name: 'Mes Cartes', path: '/cartes' }
+];
+
+const NavLink = (props) => {
+  const { children, path } = props;
   return (
-    <>
-    <header>
-      <nav className={`nav`}>
-        <Logo/>
-        <div
-          onClick={() => setNavActive(!navActive)}
-          className={`nav__menu-bar`}
-        ></div>
-        <div>
-          <Stack
-          spacing={6}
-          align="center"
-          justify={"flex-end"}
-          direction={["column", "row", "row", "row", "row"]}
-          pt={[4, 4, 0, 0]}>
-            <Link href="/about">
-              <Button variant='ghost' size="sm">About Us</Button>
-            </Link>
-            <Link href="/cartes">
-              <Button variant='ghost' size="sm">Mes Cartes</Button>
-            </Link>
-            <Drawing/>
-          </Stack>
-        </div>
-      </nav>
-      <Divider orientation='horizontal' borderWidth="1sp"/>
-    </header>
-    </>
+    <Button
+      as="a"
+      size={'sm'}
+      variant={'ghost'}
+      href={path}>
+      {children}
+    </Button>
   );
 };
 
-export default Navbar;
+export default function WithAction() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode()
+
+  return (
+    <>
+      <header>
+        <Box className='nav' px={4}>
+          <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+            <IconButton
+              size={'md'}
+              variant={'ghost'}
+              icon={isOpen ? <CloseIcon /> : <HamburgerIcon fontSize={21} />}
+              aria-label={'Open Menu'}
+              display={{ md: 'none' }}
+              onClick={isOpen ? onClose : onOpen}
+            />
+            <HStack spacing={8} alignItems={'center'}>
+              <Logo />
+              <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+                {navLinks.map(({ name, path }) => (
+                  <NavLink key={name} path={path}>{name}</NavLink>
+                ))}
+              </HStack>
+            </HStack>
+            <Stack direction={'row'} spacing={5}>
+              <Button size={'sm'} fontSize='18px' variant={'ghost'} onClick={toggleColorMode}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              </Button>
+              <Drawing/>
+            </Stack>
+          </Flex>
+
+          {isOpen ? (
+            <Box pb={4} display={{ md: 'none' }}>
+              <Stack as={'nav'} spacing={4}>
+                {navLinks.map(({ name, path }) => (
+                  <NavLink key={name} path={path}>{name}</NavLink>
+                ))}
+              </Stack>
+            </Box>
+          ) : null}
+        </Box>
+        <Divider orientation='horizontal' borderWidth="1sp"/>
+      </header>
+    </>
+  );
+}

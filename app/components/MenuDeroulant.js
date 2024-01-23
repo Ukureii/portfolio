@@ -15,16 +15,16 @@ const MenuDeroulant = ({ onRenameClick }) => {
         icon={<HamburgerIcon />}
       />
       <MenuList>
-        <MenuItem icon={<FontAwesomeIcon color='grey' icon={faThumbTack} />}>
+        <MenuItem icon={<FontAwesomeIcon icon={faThumbTack} />}>
           Épingler
         </MenuItem>
-        <MenuItem icon={<FontAwesomeIcon color='grey' icon={faPenToSquare} />} onClick={onRenameClick}>
+        <MenuItem icon={<FontAwesomeIcon icon={faPenToSquare} />} onClick={onRenameClick}>
           Renommer
         </MenuItem>
-        <MenuItem icon={<FontAwesomeIcon color='grey' icon={faTrashCan} />}>
+        <MenuItem icon={<FontAwesomeIcon icon={faTrashCan} />}>
           Supprimer
         </MenuItem>
-        <MenuItem icon={<FontAwesomeIcon color='grey' icon={faShareFromSquare} />}>
+        <MenuItem icon={<FontAwesomeIcon icon={faShareFromSquare} />}>
           Partager...
         </MenuItem>
       </MenuList>

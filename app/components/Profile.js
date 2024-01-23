@@ -116,7 +116,7 @@ export default function SocialProfileWithImage() {
                 {chunk.map((platform, index) => (
                   <Tag key={index} width="49%">
                     <TagLeftIcon as={platform.icon} />
-                    <TagLabel>{platform.label}</TagLabel>
+                    <TagLabel fontWeight='light'>{platform.label}</TagLabel>
                   </Tag>
                 ))}
               </Stack>

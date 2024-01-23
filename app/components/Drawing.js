@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEye, faEyeSlash, faClose } from '@fortawesome/free-solid-svg-icons';
 import {
   Button,
   Drawer,
@@ -8,13 +8,14 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerBody,
-  DrawerFooter,
+  Stack,
   Input,
   InputGroup,
   InputRightElement,
   useDisclosure,
   IconButton,
   Link,
+  Text
 } from '@chakra-ui/react';
 
 function emailRegex(input) {
@@ -60,7 +61,14 @@ function Drawing() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader>
-            Se connecter
+            <Stack direction={'row'} justify={'space-between'}>
+              <Text>
+                Se connecter
+              </Text>
+              <IconButton variant='ghost' size='sm' onClick={onClose}>
+                <FontAwesomeIcon icon={faClose} />
+              </IconButton>
+            </Stack>
           </DrawerHeader>
 
           <DrawerBody>
@@ -76,15 +84,19 @@ function Drawing() {
               <div style={{ textAlign: 'right', marginRight: '2px', marginBottom: '30px'}}>
                 <Link as='sub'>Mot de passe oublié</Link>
               </div>
-              <Button type='submit' size='sm' width='full' form='login-form' colorScheme='orange'>Connexion</Button>
+              <Button
+                type='submit'
+                size='sm'
+                width='full'
+                form='login-form'
+                rounded={'full'}
+                colorScheme={'red'}
+                bg={'red.300'}
+                _hover={{ bg: 'red.400' }}>
+                Connexion
+              </Button>
             </form>
           </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant='outline' size='sm' mr={3} onClick={onClose}>
-              Annuler
-            </Button>
-          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
