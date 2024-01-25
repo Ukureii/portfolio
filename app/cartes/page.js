@@ -9,7 +9,6 @@ const contact = () => {
     <>
       <Navbar/>
       <Carte/>
-      <Footer/>
     </>
   )
 }

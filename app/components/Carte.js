@@ -2,6 +2,8 @@ import React from 'react';
 import { Flex, Box, Image, useColorModeValue, Tooltip, Text } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarthEurope } from '@fortawesome/free-solid-svg-icons';
+import SearchBar from './SearchBar';
+import { Header } from './Header';
 
 const data = [
   {
@@ -39,9 +41,14 @@ const data = [
 
 function CartesGrid() {
   return (
-    <Flex alignItems="center" justifyContent="center" maxWidth="100vw" pt={'20px'} pb={'50px'}>
+    <>
+      <Flex flexDirection="column" alignItems="center" justifyContent="center" maxWidth="100vw" pb={'50px'}>
+
+        <SearchBar />
+
         <Box
           display="grid"
+          marginTop={'-20px'}
           gridTemplateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
           gap={6}
           maxW="100%"
@@ -52,8 +59,9 @@ function CartesGrid() {
         {data.map((card, index) => (
           <Carte key={index} data={card} />
         ))}
-      </Box>
-    </Flex>
+        </Box>
+      </Flex>
+    </>
   );
 }
 
@@ -85,7 +93,6 @@ function Carte({ data }) {
         objectFit="cover"
       />
 
-      {/* <Box p="1em" fontSize="1.2rem"> */}
       <Box p="1em" fontSize={{ base: '1rem', md: '1.2rem' }}>
 
         <Flex justifyContent="space-between" alignContent="center">

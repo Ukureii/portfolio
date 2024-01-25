@@ -70,11 +70,13 @@ export default function SocialProfileWithImage() {
         <Box position="absolute" top={2} right={2} zIndex={2}>
           <IconButton
             size="sm"
-            colorScheme='whiteAlpha'
+            backgroundColor="rgba(255, 255, 255, 0.36)"
+            _hover={{ bg: "rgba(255, 255, 255, 0.48)"}}
+            _active={{ bg: "rgba(255, 255, 255, 0.64)" }}
             rounded={'full'}
             aria-label='Edit Profile'
             fontSize={18}
-            icon={<FontAwesomeIcon icon={ faPen } />}
+            icon={<FontAwesomeIcon icon={ faPen } color='white'/>}
           />
         </Box>
         <Flex justify={'center'} mt={-12}>

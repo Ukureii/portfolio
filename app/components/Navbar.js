@@ -10,6 +10,8 @@ import {
   Divider,
   Stack,
   useColorMode,
+  Avatar,
+  Link
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Drawing from './Drawing';
@@ -17,7 +19,7 @@ import Logo from './Logo';
 
 const navLinks = [
   { name: 'Profil', path: '/about' },
-  { name: 'Mes Cartes', path: '/cartes' }
+  { name: 'Mes cartes', path: '/cartes' }
 ];
 
 const NavLink = (props) => {
@@ -37,7 +39,6 @@ export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
 
   return (
     <>
@@ -66,7 +67,9 @@ export default function WithAction() {
               </IconButton>
 
               {isLoggedIn ? (
-                <AvatarComponent />
+                <Link href="/about">
+                  <Avatar size='sm' name='Logged in' src='https://bit.ly/broken-link' />
+                </Link>
               ) : (
                 <Drawing/>
               )}

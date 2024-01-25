@@ -43,7 +43,7 @@ export default function HomePage() {
             </Text>
             <br />
             <Text as={'span'} color={useColorModeValue('red.300', 'red.200')}>
-              lorem ipsum !
+              j'ai pas d'idée !
             </Text>
           </Heading>
           <Text color={useColorModeValue('gray.500', 'gray.400')}>
@@ -58,16 +58,9 @@ export default function HomePage() {
               px={6}
               colorScheme={'red'}
               bg={useColorModeValue('red.300', 'red.200')}
-              _hover={{ bg: useColorModeValue('red.400', 'red.300') }}>
-              Get started
-            </Button>
-            <Button
-              rounded={'full'}
-              size={'lg'}
-              fontWeight={'normal'}
-              px={6}
-            >
-              How It Works
+              _hover={{ bg: useColorModeValue('red.400', 'red.300') }}
+              _active={{ bg: useColorModeValue('red.500', 'red.400') }}>
+              Commencer
             </Button>
           </Stack>
         </Stack>
@@ -106,6 +99,70 @@ export default function HomePage() {
           </Box>
         </Flex>
       </Stack>
+
+      <Stack
+        mt={'30px'}
+        align={'center'}
+        spacing={{ base: 8, md: 10 }}
+        py={{ base: 20, md: 28 }}
+        direction={{ base: 'column', md: 'row' }}>
+        <Flex
+          flex={1}
+          justify={'center'}
+          align={'center'}
+          position={'relative'}
+          w={'full'}>
+          <Box
+            position={'relative'}
+            height={'300px'}
+            rounded={'2xl'}
+            boxShadow={'xl'}
+            width={'full'}
+            overflow={'hidden'}>
+            <Image
+              alt={'Hero Image'}
+              fit={'cover'}
+              align={'center'}
+              w={'100%'}
+              h={'100%'}
+              src={
+                'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
+              }
+            />
+          </Box>
+        </Flex>
+        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+          <Heading
+            lineHeight={1.1}
+            fontWeight={600}
+            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
+            <Text
+              as={'span'}
+              position={'relative'}
+              _after={{
+                content: "''",
+                width: 'full',
+                height: '30%',
+                position: 'absolute',
+                bottom: 1,
+                left: 0,
+                bg: 'red.300',
+                zIndex: -1,
+              }}>
+              Bird,
+            </Text>
+            <br />
+            <Text as={'span'} color={useColorModeValue('red.300', 'red.200')}>
+              lorem ipsum !
+            </Text>
+          </Heading>
+          <Text color={useColorModeValue('gray.500', 'gray.400')}>
+            Utilisez Bird pour cartographier sous forme d’une carte mentale des situations 
+            ou des enjeux et comprendre leur complexité. Visualisez et agissez !
+          </Text>
+        </Stack>
+      </Stack>
+
     </Container>
   )
 }

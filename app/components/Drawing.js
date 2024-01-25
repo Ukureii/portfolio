@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEye, faEyeSlash, faClose } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -16,38 +18,44 @@ import {
   IconButton,
   Link,
   Text,
-  useColorModeValue
+  useColorModeValue,
+  DrawerFooter
 } from '@chakra-ui/react';
-
-function emailRegex(input) {
-  let regex = '/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i';
-  return regex.test(input);
-}
-
-function PasswordInput() {
-  const [show, setShow] = React.useState(false)
-  const handleClick = () => setShow(!show)
-
-  return (
-    <InputGroup>
-      <Input
-        isRequired
-        focusBorderColor='red.200'
-        type={show ? 'text' : 'password'}
-        placeholder='Mot de passe'
-      />
-      <InputRightElement>
-        <Button variant='ghost' size='sm' mr='1' onClick={handleClick}>
-          {show ? <FontAwesomeIcon icon={faEyeSlash}/> : <FontAwesomeIcon icon={faEye}/>}
-        </Button>
-      </InputRightElement>
-    </InputGroup>
-  )
-}
 
 function Drawing() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const [show, setShow] = React.useState(false)
+  const handleClick = () => setShow(!show)
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+
+  const handleLogin = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Login failed");
+
+      const { token } = await response.json();
+      document.cookie = `token=${token}; path=/`;
+      router.push("/protected");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -72,16 +80,32 @@ function Drawing() {
             </Stack>
           </DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody mt={'25px'}>
             <form
               id='login-form'
               onSubmit={(e) => {
                 e.preventDefault()
-                console.log('submitted')
+                handleLogin
               }}
             >
-              <Input isRequired focusBorderColor='red.200' name='nickname' placeholder='Identifiant' mb='2' />
-              <PasswordInput />
+              <Input isRequired focusBorderColor='red.200' name='username' value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Identifiant' mb='2' />
+              
+              <InputGroup>
+                <Input
+                  isRequired
+                  focusBorderColor='red.200'
+                  type={show ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder='Mot de passe'
+                />
+                <InputRightElement>
+                  <Button variant='ghost' size='sm' mr='1' onClick={handleClick}>
+                    {show ? <FontAwesomeIcon icon={faEyeSlash}/> : <FontAwesomeIcon icon={faEye}/>}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+
               <div style={{ textAlign: 'right', marginRight: '2px', marginBottom: '30px'}}>
                 <Link as='sub'>Mot de passe oublié</Link>
               </div>
@@ -93,11 +117,24 @@ function Drawing() {
                 rounded={'full'}
                 colorScheme={'red'}
                 bg={useColorModeValue('red.300', 'red.200')}
-                _hover={{ bg: useColorModeValue('red.400', 'red.300') }}>
+                _hover={{ bg: useColorModeValue('red.400', 'red.300') }}
+                _active={{ bg: useColorModeValue('red.500', 'red.400') }}>
                 Connexion
               </Button>
             </form>
           </DrawerBody>
+          <DrawerFooter >
+            <Stack direction={'column'} fontWeight={'light'} fontSize={'14px'} color={useColorModeValue('gray', 'gray.300') }>
+              <Text >
+                  Les comptes utilisateurs sont générés par l'établissement.
+              </Text>
+              <Text mt={2}>
+                Si vous êtes scolarisé au collège André Chamson de Meyrueis
+                et que vous n'avez pas encore de compte, veuillez contacter votre établissement afin d'obtenir
+                des informations sur la procédure de création de compte.
+              </Text>
+            </Stack>
+          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>

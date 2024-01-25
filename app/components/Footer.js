@@ -4,6 +4,7 @@ import {
   Box,
   Text,
   Flex,
+  Link,
   useColorModeValue,
 } from '@chakra-ui/react'
 import Logo from './Logo'
@@ -11,7 +12,6 @@ import Logo from './Logo'
 export default function Footer() {
   return (
     <Box
-      position={'sticky'}
       bottom={0}
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}>
@@ -37,7 +37,7 @@ export default function Footer() {
           <Logo />
         </Flex>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-          © 2022 Chakra Templates. All rights reserved
+          © 2024 Bird - All rights reserved
         </Text>
       </Box>
     </Box>
