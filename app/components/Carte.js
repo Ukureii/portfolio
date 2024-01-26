@@ -43,7 +43,6 @@ function CartesGrid() {
   return (
     <>
       <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'} maxWidth={'100vw'} marginBottom={-5}>
-        <SearchBar />
         <Box
           display={'grid'}
           marginTop={'-20px'}

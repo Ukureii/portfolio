@@ -18,7 +18,7 @@ import Logo from './Logo';
 
 const navLinks = [
   { name: 'Mon parcours', path: '/parcours' },
-  { name: 'Test graph', path: '/testdiag' }
+  { name: 'Test graph', path: '/graph' }
 ];
 
 const NavLink = (props) => {
