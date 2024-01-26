@@ -2,15 +2,16 @@
 import React from 'react'
 import Carte from '../components/Carte'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import CardsDivider from '../components/CardsDivider'
 
-const contact = () => {
+const parcours = () => {
   return (
     <>
       <Navbar/>
       <Carte/>
+      <CardsDivider />
     </>
   )
 }
 
-export default contact
+export default parcours

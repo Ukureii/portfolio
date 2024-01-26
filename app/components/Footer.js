@@ -4,7 +4,6 @@ import {
   Box,
   Text,
   Flex,
-  Link,
   useColorModeValue,
 } from '@chakra-ui/react'
 import Logo from './Logo'

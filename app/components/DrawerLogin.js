@@ -22,7 +22,7 @@ import {
   DrawerFooter
 } from '@chakra-ui/react';
 
-function Drawing() {
+function DrawerLogin() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const [show, setShow] = React.useState(false)
@@ -59,7 +59,7 @@ function Drawing() {
 
   return (
     <>
-      <IconButton variant='ghost' size="sm" aria-label='Done' fontSize='18px' onClick={onOpen} >
+      <IconButton variant={'ghost'} size={'sm'} aria-label={'Done'} fontSize={'18px'} onClick={onOpen} >
         <FontAwesomeIcon icon={faUser} />
       </IconButton>
       <Drawer
@@ -74,7 +74,7 @@ function Drawing() {
               <Text>
                 Se connecter
               </Text>
-              <IconButton variant='ghost' size='sm' onClick={onClose}>
+              <IconButton variant={'ghost'} size={'sm'} onClick={onClose}>
                 <FontAwesomeIcon icon={faClose} />
               </IconButton>
             </Stack>
@@ -82,25 +82,25 @@ function Drawing() {
 
           <DrawerBody mt={'25px'}>
             <form
-              id='login-form'
+              id={'login-form'}
               onSubmit={(e) => {
                 e.preventDefault()
                 handleLogin
               }}
             >
-              <Input isRequired focusBorderColor='red.200' name='username' value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Identifiant' mb='2' />
+              <Input isRequired focusBorderColor={'red.200'} name={'username'} value={username} onChange={(e) => setUsername(e.target.value)} placeholder={'Identifiant'} mb={'2'} />
               
               <InputGroup>
                 <Input
                   isRequired
-                  focusBorderColor='red.200'
+                  focusBorderColor={'red.200'}
                   type={show ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder='Mot de passe'
+                  placeholder={'Mot de passe'}
                 />
                 <InputRightElement>
-                  <Button variant='ghost' size='sm' mr='1' onClick={handleClick}>
+                  <Button variant={'ghost'} size={'sm'} mr={'1'} onClick={handleClick}>
                     {show ? <FontAwesomeIcon icon={faEyeSlash}/> : <FontAwesomeIcon icon={faEye}/>}
                   </Button>
                 </InputRightElement>
@@ -110,10 +110,10 @@ function Drawing() {
                 <Link as='sub'>Mot de passe oublié</Link>
               </div>
               <Button
-                type='submit'
-                size='sm'
-                width='full'
-                form='login-form'
+                type={'submit'}
+                size={'sm'}
+                width={'full'}
+                form={'login-form'}
                 rounded={'full'}
                 colorScheme={'red'}
                 bg={useColorModeValue('red.300', 'red.200')}
@@ -129,7 +129,7 @@ function Drawing() {
                   Les comptes utilisateurs sont générés par l'établissement.
               </Text>
               <Text mt={2}>
-                Si vous êtes scolarisé au collège André Chamson de Meyrueis
+                Si vous êtes scolarisé au collège André-Chamson de Meyrueis
                 et que vous n'avez pas encore de compte, veuillez contacter votre établissement afin d'obtenir
                 des informations sur la procédure de création de compte.
               </Text>
@@ -141,4 +141,4 @@ function Drawing() {
   );
 }
 
-export default Drawing;
+export default DrawerLogin;

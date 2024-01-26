@@ -10,16 +10,15 @@ import {
   Divider,
   Stack,
   useColorMode,
-  Avatar,
-  Link
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-import Drawing from './Drawing';
+import DrawerLogin from './DrawerLogin';
+import DrawerProfile from './DrawerProfile';
 import Logo from './Logo';
 
 const navLinks = [
-  { name: 'Profil', path: '/about' },
-  { name: 'Mes cartes', path: '/cartes' }
+  { name: 'Mon parcours', path: '/parcours' },
+  { name: 'Test graph', path: '/testdiag' }
 ];
 
 const NavLink = (props) => {
@@ -43,7 +42,7 @@ export default function WithAction() {
   return (
     <>
       <header>
-        <Box className='nav' px={4}>
+        <Box className={'nav'} px={4}>
           <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
             <IconButton
               size={'md'}
@@ -62,17 +61,15 @@ export default function WithAction() {
               </HStack>
             </HStack>
             <Stack direction={'row'} spacing={4}>
-              <IconButton size={'sm'} fontSize='18px' variant={'ghost'} onClick={toggleColorMode}>
+              <IconButton fontSize='18px' variant={'ghost'} onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </IconButton>
 
-              {isLoggedIn ? (
-                <Link href="/about">
-                  <Avatar size='sm' name='Logged in' src='https://bit.ly/broken-link' />
-                </Link>
-              ) : (
-                <Drawing/>
-              )}
+              {/* {isLoggedIn ? ( */}
+                <DrawerProfile />
+              {/* ) : (
+                <DrawerLogin />
+              )} */}
 
             </Stack>
           </Flex>
@@ -87,7 +84,7 @@ export default function WithAction() {
             </Box>
           ) : null}
         </Box>
-        <Divider orientation='horizontal' borderWidth="1sp"/>
+        <Divider orientation={'horizontal'} borderWidth={'1sp'} />
       </header>
     </>
   );

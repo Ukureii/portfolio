@@ -3,7 +3,6 @@ import { Flex, Box, Image, useColorModeValue, Tooltip, Text } from '@chakra-ui/r
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarthEurope } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from './SearchBar';
-import { Header } from './Header';
 
 const data = [
   {
@@ -39,22 +38,21 @@ const data = [
   }
 ];
 
+// présentation des cartes
 function CartesGrid() {
   return (
     <>
-      <Flex flexDirection="column" alignItems="center" justifyContent="center" maxWidth="100vw" pb={'50px'}>
-
+      <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'} maxWidth={'100vw'} marginBottom={-5}>
         <SearchBar />
-
         <Box
-          display="grid"
+          display={'grid'}
           marginTop={'-20px'}
           gridTemplateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
           gap={6}
-          maxW="100%"
-          mx="auto"
-          padding="10"
-          overflowX="hidden"
+          maxW={'100%'}
+          mx={'auto'}
+          padding={'10'}
+          overflowX={'hidden'}
         >
         {data.map((card, index) => (
           <Carte key={index} data={card} />
@@ -65,18 +63,19 @@ function CartesGrid() {
   );
 }
 
+// apparence globale des cartes
 function Carte({ data }) {
 
   return (
     <Box
-      position="relative"
+      position={'relative'}
       bg={useColorModeValue('white', 'gray.800')}
-      borderWidth="1px"
+      borderWidth={'px'}
       backgroundColor={useColorModeValue('white', 'gray.900')}
       height={{ base: '258px', md: '270px' }}
-      rounded="lg"
-      shadow="sm"
-      transition="box-shadow 0.3s ease, transform 0.3s ease"
+      rounded={'lg'}
+      shadow={'sm'}
+      transition={'box-shadow 0.3s ease, transform 0.3s ease'}
       _hover={{
         transform: 'translateY(-4px)',
         boxShadow: 'xl',
@@ -85,23 +84,23 @@ function Carte({ data }) {
       <Image
         src={data.imageURL}
         alt={`Picture of ${data.name}`}
-        roundedTop="lg"
-        maxW="300px"
-        maxH="200px"
-        width="100%"
-        height="100%"
-        objectFit="cover"
+        roundedTop={'lg'}
+        maxW={'300px'}
+        maxH={'200px'}
+        width={'100%'}
+        height={'100%'}
+        objectFit={'cover'}
       />
 
-      <Box p="1em" fontSize={{ base: '1rem', md: '1.2rem' }}>
+      <Box p={'1em'} fontSize={{ base: '1rem', md: '1.2rem' }}>
 
-        <Flex justifyContent="space-between" alignContent="center">
+        <Flex justifyContent={'space-between'} alignContent={'center'}>
           <Text>
             {data.name}
           </Text>
           <Box>
             {data.isPublic && (
-              <Tooltip hasArrow label="Cette carte est publique" borderRadius={5}>
+              <Tooltip hasArrow label={'Cette carte est publique'} borderRadius={'5'}>
                 <FontAwesomeIcon icon={faEarthEurope} />
               </Tooltip>
             )}

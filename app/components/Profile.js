@@ -8,43 +8,12 @@ import {
   Flex,
   Text,
   Stack,
-  Tag,
-  TagLeftIcon,
-  TagLabel,
   IconButton,
   useColorModeValue,
   Divider,
 } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
-import { FaTiktok, FaTwitch, FaSnapchatGhost, FaDiscord, FaFacebookF, FaSteam, FaXbox, FaPlaystation, FaBattleNet } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { GrInstagram } from "react-icons/gr";
-
-const socialMediaPlatforms = [
-  { icon: GrInstagram, label: 'Instagram' },
-  { icon: FaTiktok, label: 'Tik Tok' },
-  { icon: FaTwitch, label: 'Twitch' },
-  { icon: FaXTwitter, label: 'X Twitter' },
-  { icon: FaDiscord, label: 'Discord' },
-  { icon: FaSnapchatGhost, label: 'Snapchat' },
-  { icon: FaFacebookF, label: 'FaceBook' },
-  { icon: FaSteam, label: 'Steam' },
-  { icon: FaXbox, label: 'Xbox' },
-  { icon: FaPlaystation, label: 'PlayStation' },
-  { icon: FaBattleNet, label: 'Battle Net' },
-];
-
-const chunkedPlatforms = socialMediaPlatforms.reduce((result, item, index) => {
-  const chunkIndex = Math.floor(index / 2);
-
-  if (!result[chunkIndex]) {
-    result[chunkIndex] = [];
-  }
-
-  result[chunkIndex].push(item);
-  return result;
-}, []);
 
 export default function SocialProfileWithImage() {
   return (
@@ -93,36 +62,18 @@ export default function SocialProfileWithImage() {
             <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
               John Doe
             </Heading>
-            <Text color={useColorModeValue('gray', 'gray.400')} fontWeight='light'>@choisi_ton_pseudo</Text>
+            <Text color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'}>@choisi_ton_pseudo</Text>
 
             <Divider mt={5} mb={2}/>
 
             <Heading fontSize={'15px'} mb={1}>
               À propos de moi
             </Heading>
-            <Text color={useColorModeValue('gray', 'gray.400')}fontWeight='light'>
+            <Text color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'}>
               Ajoute une biographie personnalisée sur ton profil !
             </Text>
           </Stack>
 
-          <Divider mt={6} mb={2}/>
-
-          <Heading fontSize={'15px'} mb={2}>
-              Retrouve moi sur
-          </Heading>
-
-          <Stack direction="column" spacing={2}>
-            {chunkedPlatforms.map((chunk, chunkIndex) => (
-              <Stack key={chunkIndex} direction="row" spacing={2}>
-                {chunk.map((platform, index) => (
-                  <Tag key={index} width="49%">
-                    <TagLeftIcon as={platform.icon} />
-                    <TagLabel fontWeight='light'>{platform.label}</TagLabel>
-                  </Tag>
-                ))}
-              </Stack>
-            ))}
-          </Stack>
         </Box>
       </Box>
     </Center>

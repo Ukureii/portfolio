@@ -4,17 +4,17 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-u
 const Tabing = () => {
   return (
     <>
-        <Tabs position="relative" variant="unstyled">
+        <Tabs position={'relative'} variant={'unstyled'}>
             <TabList>
                 <Tab>One</Tab>
                 <Tab>Two</Tab>
                 <Tab>Three</Tab>
             </TabList>
             <TabIndicator
-                mt="-1.5px"
-                height="2px"
-                bg="blue.500"
-                borderRadius="1px"
+                mt={'-1.5px'}
+                height={'2px'}
+                bg={'blue.500'}
+                borderRadius={'1px'}
             />
             <TabPanels>
                 <TabPanel>

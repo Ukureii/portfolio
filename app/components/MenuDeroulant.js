@@ -10,8 +10,8 @@ const MenuDeroulant = ({ onRenameClick }) => {
     <Menu isLazy zIndex={3}>
       <MenuButton
         as={IconButton}
-        aria-label='Options'
-        size='sm'
+        aria-label={'Options'}
+        size={'sm'}
         icon={<HamburgerIcon />}
       />
       <MenuList>
