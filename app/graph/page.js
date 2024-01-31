@@ -1,13 +1,13 @@
 'use client'
 import React from 'react'
 import Navbar from '../components/Navbar'
-import TestGoJS from '../components/TestGoJS'
-import TestFlow from '../components/TestFlow'
+import GraphFlow from '../components/ReactFlow/GraphFlow'
 
 const graph = () => {
   return (
     <>
-      <TestFlow />
+      <Navbar />
+      <GraphFlow />
     </>
   )
 }

@@ -65,11 +65,8 @@ export default function WithAction() {
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </IconButton>
 
-              {/* {isLoggedIn ? ( */}
-                <DrawerProfile />
-              {/* ) : (
-                <DrawerLogin />
-              )} */}
+              <DrawerLogin />
+              <DrawerProfile />
 
             </Stack>
           </Flex>

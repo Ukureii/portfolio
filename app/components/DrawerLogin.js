@@ -22,6 +22,34 @@ import {
   DrawerFooter
 } from '@chakra-ui/react';
 
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("https://votre-api.com/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Échec de l'authentification");
+    }
+
+    const { token } = await response.json();
+    document.cookie = `token=${token}; path=/`;
+    router.push("/protected");
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 function DrawerLogin() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -33,7 +61,7 @@ function DrawerLogin() {
   const router = useRouter();
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
     try {
       const response = await fetch("/api/login", {
@@ -59,7 +87,7 @@ function DrawerLogin() {
 
   return (
     <>
-      <IconButton variant={'ghost'} size={'sm'} aria-label={'Done'} fontSize={'18px'} onClick={onOpen} >
+      <IconButton variant={'ghost'} size={'md'} aria-label={'Done'} fontSize={'18px'} onClick={onOpen} >
         <FontAwesomeIcon icon={faUser} />
       </IconButton>
       <Drawer
@@ -84,14 +112,21 @@ function DrawerLogin() {
             <form
               id={'login-form'}
               onSubmit={(e) => {
-                e.preventDefault()
-                handleLogin
+                e.preventDefault();
+                handleLogin(e);
               }}
             >
-              <Input isRequired focusBorderColor={'red.200'} name={'username'} value={username} onChange={(e) => setUsername(e.target.value)} placeholder={'Identifiant'} mb={'2'} />
-              
+              <Input
+                isRequired
+                focusBorderColor={'red.200'}
+                name={'username'}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder={'Identifiant'}
+                mb={'2'}
+              />
               <InputGroup>
-                <Input
+              <Input
                   isRequired
                   focusBorderColor={'red.200'}
                   type={show ? 'text' : 'password'}
@@ -126,7 +161,7 @@ function DrawerLogin() {
           <DrawerFooter >
             <Stack direction={'column'} fontWeight={'light'} fontSize={'14px'} color={useColorModeValue('gray', 'gray.300') }>
               <Text >
-                  Les comptes utilisateurs sont générés par l'établissement.
+                Les comptes utilisateurs sont générés par l'établissement.
               </Text>
               <Text mt={2}>
                 Si vous êtes scolarisé au collège André-Chamson de Meyrueis
