@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect, useDisclosure } from "react"
-import Navbar from "./components/Navbar";
-import HomePage from "./components/HomePage";
-import Footer from "./components/Footer";
+import Navbar from "./components/layout/Navbar";
+import HomePage from "./components/home/HomePage";
+import Footer from "./components/layout/Footer";
 
 const ExampleComponent = () => {
   const [isToggle, setIsToggle] = useState(true);

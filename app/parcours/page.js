@@ -1,14 +1,14 @@
 'use client'
 import React from 'react'
-import Carte from '../components/Carte'
-import Navbar from '../components/Navbar'
-import CardsDivider from '../components/CardsDivider'
+import MesCartes from '../components/home/MesCartes'
+import Navbar from '../components/layout/Navbar'
+import CardsDivider from '../components/home/CardsDivider'
 
 const parcours = () => {
   return (
     <>
       <Navbar/>
-      <Carte/>
+      <MesCartes/>
       <CardsDivider />
     </>
   )

@@ -5,6 +5,7 @@ import {
   Text,
   Flex,
   useColorModeValue,
+  AspectRatio,
 } from '@chakra-ui/react'
 import Logo from './Logo'
 
