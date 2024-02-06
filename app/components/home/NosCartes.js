@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Flex, Box, Image, useColorModeValue, Tooltip, Text } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEarthEurope } from '@fortawesome/free-solid-svg-icons';
+import { Flex, Box, Image, useColorModeValue, Text, Skeleton } from '@chakra-ui/react';
 
 function CartesGrid() {
   const [cartesData, setCartesData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchCartes() {
+    const fetchCartes = async () => {
       try {
         const result = await fetch('https://siomende.fr/bird/api/cartes/All');
 
@@ -19,17 +18,20 @@ function CartesGrid() {
         }
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     }
 
     fetchCartes();
-  }, []); // Cette dépendance vide signifie que le code s'exécute une seule fois après le rendu initial
-
+  }, []);
+  
   return (
     <>
       <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'} maxWidth={'100vw'} marginBottom={-5}>
         <Box
           display={'grid'}
+          marginTop={'-30px'}
           gridTemplateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
           gap={6}
           maxW={'100%'}
@@ -37,9 +39,15 @@ function CartesGrid() {
           padding={'10'}
           overflowX={'hidden'}
         >
-          {cartesData.map((card, index) => (
-            <MesCartes key={index} data={card} />
-          ))}
+          {loading ? (
+            [1, 2].map((_, index) => ( 
+              <Skeleton key={index} height="270px" width="100%" rounded={'lg'} />
+            ))
+          ) : ( 
+            cartesData.map((card, index) => (
+              <NosCartes key={index} data={card} />
+            ))
+          )}
         </Box>
       </Flex>
     </>
@@ -76,13 +84,6 @@ function NosCartes({ data }) {
       <Box p={'1em'} fontSize={{ base: '1rem', md: '1.2rem' }}>
         <Flex justifyContent={'space-between'} alignContent={'center'}>
           <Text>{data.libelleC}</Text>
-          <Box>
-            {data.estPublique == 1 && (
-              <Tooltip hasArrow label={'Cette carte est publique'} borderRadius={'5'}>
-                <FontAwesomeIcon icon={faEarthEurope} />
-              </Tooltip>
-            )}
-          </Box>
         </Flex>
       </Box>
     </Box>

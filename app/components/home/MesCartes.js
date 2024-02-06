@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { Flex, Box, Image, useColorModeValue, Tooltip, Text } from '@chakra-ui/react';
+import React, { useState, useEffect } from 'react';
+import { Flex, Box, Image, useColorModeValue, Tooltip, Text, Skeleton } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarthEurope } from '@fortawesome/free-solid-svg-icons';
 
 function CartesGrid() {
   const [cartesData, setCartesData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchCartes() {
+    const fetchCartes = async () => {
       try {
-        const result = await fetch('https://siomende.fr/bird/api/cartes/All');
+        const result = await fetch('https://siomende.fr/bird/api/cartes/AllByUser?id=21');
 
         if (result.ok === true) {
           const cartes = await result.json();
@@ -19,17 +20,20 @@ function CartesGrid() {
         }
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
-    }
+    };
 
     fetchCartes();
-  }, []); // Cette dépendance vide signifie que le code s'exécute une seule fois après le rendu initial
+  }, []);
 
   return (
     <>
       <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'} maxWidth={'100vw'} marginBottom={-5}>
         <Box
           display={'grid'}
+          marginBottom={'5px'}
           gridTemplateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
           gap={6}
           maxW={'100%'}
@@ -37,9 +41,15 @@ function CartesGrid() {
           padding={'10'}
           overflowX={'hidden'}
         >
-          {cartesData.map((card, index) => (
-            <MesCartes key={index} data={card} />
-          ))}
+          {loading ? (
+            [1, 2, 3].map((_, index) => ( 
+              <Skeleton key={index} height="270px" width="100%" rounded={'lg'} />
+            ))
+          ) : ( 
+            cartesData.map((card, index) => (
+              <MesCartes key={index} data={card} />
+            ))
+          )}
         </Box>
       </Flex>
     </>

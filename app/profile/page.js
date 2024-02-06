@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import Profile from '../components/pages/Profile'
+import Profile from '../components/home/Profile'
 import Navbar from '../components/layout/Navbar'
 
 const profile = () => {

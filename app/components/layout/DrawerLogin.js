@@ -87,7 +87,7 @@ function DrawerLogin() {
 
   return (
     <>
-      <IconButton variant={'ghost'} size={'md'} aria-label={'Done'} fontSize={'18px'} onClick={onOpen} >
+      <IconButton fontSize='18px' variant={'ghost'} size={'md'} aria-label={'Done'} onClick={onOpen} >
         <FontAwesomeIcon icon={faUser} />
       </IconButton>
       <Drawer
@@ -164,7 +164,7 @@ function DrawerLogin() {
                 Les comptes utilisateurs sont générés par l'établissement.
               </Text>
               <Text mt={2}>
-                Si vous êtes scolarisé au collège André-Chamson de Meyrueis
+                Si vous êtes scolarisé au collège<br />André-CHAMSON de Meyrueis
                 et que vous n'avez pas encore de compte, veuillez contacter votre établissement afin d'obtenir
                 des informations sur la procédure de création de compte.
               </Text>

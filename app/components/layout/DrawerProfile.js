@@ -17,9 +17,6 @@ import {
   DrawerFooter,
   Avatar,
   Box,
-  Tag,
-  TagLeftIcon,
-  TagLabel,
   Heading,
   Divider,
   Button,
@@ -74,10 +71,10 @@ function DrawerProfile() {
 
         <DrawerContent>
           <DrawerHeader
-            bgImage={'https://images.unsplash.com/photo-1612865547334-09cb8cb455da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'}
+            bgColor={useColorModeValue('gray.500', 'gray.800')}
             bgSize={'cover'}
             bgPosition={'center'}
-            pb={'80px'}
+            pb={'60px'}
             zIndex={'-1'}>
             <Stack direction={'row'} justify={'space-between'}>
               <Text />
@@ -123,7 +120,7 @@ function DrawerProfile() {
                 </Text>
               </Stack>
 
-              <Divider mt={6} mb={2}/>
+              {/* <Divider mt={6} mb={2}/>
 
               <Heading fontSize={'15px'} mb={3}>
                 Retrouve moi sur
@@ -140,7 +137,8 @@ function DrawerProfile() {
                     ))}
                   </Stack>
                 ))}
-              </Stack>
+              </Stack> */}
+
             </Box> 
           </DrawerBody>
 
