@@ -5,14 +5,10 @@ import {
   Avatar,
   Box,
   Center,
-  Image,
   Flex,
   Text,
   Stack,
   Skeleton,
-  Editable,
-  EditablePreview,
-  EditableTextarea,
   useColorModeValue,
   Divider,
 } from '@chakra-ui/react'
@@ -42,7 +38,7 @@ export default function Profile() {
     fetchUsers();
   }, []);
 
-  const description = usersData.descriptionU || 'Ajoute une biographie personnalisée sur ton profil !';
+  // const description = usersData.descriptionU || 'Ajoute une biographie personnalisée sur ton profil !';
 
   return (
     <Center p={6}>
@@ -77,6 +73,9 @@ export default function Profile() {
               <Stack>
                 <Skeleton height='28px' maxWidth={'300px'} minWidth={'150px'}/>
                 <Skeleton height='17px' maxWidth={'400px'} minWidth={'200px'}/>
+                <Divider mt={4} mb={2}/>
+                <Skeleton height='17px' maxWidth={'250px'} minWidth={'150px'}/>
+                <Skeleton height='17px' maxWidth={'400px'} minWidth={'200px'}/>
               </Stack>
             ) : ( 
               <>
@@ -84,20 +83,16 @@ export default function Profile() {
                   {usersData.prenomU} {usersData.nomU}
                 </Heading>
                 <Text color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'}>@{usersData.identifiantU}</Text>
+                <Divider mt={5} mb={2}/>
+                <Heading fontSize={'15px'} mb={1}>
+                  À propos de moi
+                </Heading>
+                <Text color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'}>
+                  {usersData.descriptionU}
+                </Text>
               </>
             )}
-            
-            <Divider mt={5} mb={2}/>
-
-            <Heading fontSize={'15px'} mb={1}>
-              À propos de moi
-            </Heading>
-            <Editable color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'} defaultValue={description}>
-              <EditablePreview />
-              <EditableTextarea />
-            </Editable>
           </Stack>
-
         </Box>
       </Box>
     </Center>

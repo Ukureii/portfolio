@@ -41,8 +41,8 @@ export default function HomePage() {
               Bird,
             </Text>
             <br />
-            <Text as={'span'} color={useColorModeValue('red.300', 'red.200')}>
-              lorem ipsum !
+            <Text fontSize={'3xl'} color={useColorModeValue('red.300', 'red.200')}>
+              Développer mes compétence à s’orienter
             </Text>
           </Heading>
           <Text color={useColorModeValue('gray.500', 'gray.400')}>
@@ -50,7 +50,7 @@ export default function HomePage() {
             ou des enjeux et comprendre leur complexité. Visualisez et agissez !
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
-            <Button
+            <Button // if logged in { /parcours } else { /DrawerLogin }
               rounded={'full'}
               size={'lg'}
               fontWeight={'normal'}
@@ -99,7 +99,7 @@ export default function HomePage() {
         </Flex>
       </Stack>
 
-      <Stack
+      {/* <Stack
         mt={'30px'}
         align={'center'}
         spacing={{ base: 8, md: 10 }}
@@ -156,7 +156,7 @@ export default function HomePage() {
             Vous permettra de ... en toute simplicité !
           </Text>
         </Stack>
-      </Stack>
+      </Stack> */}
 
     </Container>
   )

@@ -5,7 +5,7 @@ import {
   Text,
   Flex,
   useColorModeValue,
-  AspectRatio,
+  Stack,
 } from '@chakra-ui/react'
 import Logo from './Logo'
 
@@ -36,9 +36,29 @@ export default function Footer() {
           }}>
           <Logo />
         </Flex>
-        <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-          © 2024 Bird - All rights reserved
-        </Text>
+        <Stack justify={'center'} direction={'row'}>
+          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+            Collège André-CHAMSON
+          </Text>
+          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+            |
+          </Text>
+          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+            Les cordées de la réussite SOAN
+          </Text>
+          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+            |
+          </Text>
+          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+            CARDIE Montpellier
+          </Text>
+          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+            |
+          </Text>
+          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+            BTS SIO - Lycée Émile Peytavin
+          </Text>
+        </Stack>
       </Box>
     </Box>
   )

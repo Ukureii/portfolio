@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
@@ -16,6 +16,7 @@ import {
   useColorModeValue,
   DrawerFooter,
   Avatar,
+  Skeleton,
   Box,
   Heading,
   Divider,
@@ -57,6 +58,29 @@ function DrawerProfile() {
     const handleButtonClick = () => {
         router.push('/profile');
     };
+    const [usersData, setUsersData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const result = await fetch('https://siomende.fr/bird/api/utilisateurs/One?id=2');
+
+        if (result.ok === true) {
+          const users = await result.json();
+          setUsersData(users);
+        } else {
+          throw new Error('Impossible de contacter le serveur');
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   return (
     <>
@@ -74,11 +98,11 @@ function DrawerProfile() {
             bgColor={useColorModeValue('gray.500', 'gray.800')}
             bgSize={'cover'}
             bgPosition={'center'}
-            pb={'60px'}
+            pb={'80px'}
             zIndex={'-1'}>
             <Stack direction={'row'} justify={'space-between'}>
               <Text />
-              <IconButton
+              {/* <IconButton
                 size="sm"
                 backgroundColor="rgba(255, 255, 255, 0.36)"
                 _hover={{ bg: "rgba(255, 255, 255, 0.48)"}}
@@ -88,7 +112,7 @@ function DrawerProfile() {
                 fontSize={18}
                 onClick={handleButtonClick}
                 icon={<FontAwesomeIcon icon={ faPen } color='white'/>}
-              />
+              /> */}
             </Stack>
           </DrawerHeader>
 
@@ -105,19 +129,35 @@ function DrawerProfile() {
 
             <Box pt={'120px'}>
               <Stack spacing={0} mb={6}>
-                <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
-                  John Doe
-                </Heading>
-                <Text color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'}>@choisi_ton_pseudo</Text>
+
+                {loading ? (
+                  <Stack>
+                    <Skeleton height='28px' maxWidth={'300px'} minWidth={'150px'}/>
+                    <Skeleton height='17px' maxWidth={'400px'} minWidth={'200px'}/>
+                  </Stack>
+                ) : ( 
+                  <>
+                    <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
+                      {usersData.prenomU} {usersData.nomU}
+                    </Heading>
+                    <Text color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'}>@{usersData.identifiantU}</Text>
+                  </>
+                )}
 
                 <Divider mt={5} mb={2}/>
 
                 <Heading fontSize={'15px'} mb={1}>
                   À propos de moi
                 </Heading>
-                <Text color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'}>
-                  Ajoute une biographie personnalisée sur ton profil !
-                </Text>
+
+                {loading ? (
+                  <Skeleton height='17px' maxWidth={'400px'} minWidth={'200px'}/>
+                ) : ( 
+                  <Text color={useColorModeValue('gray', 'gray.400')} fontWeight={'light'}>
+                    {usersData.descriptionU}
+                  </Text>
+                )}
+                
               </Stack>
 
               {/* <Divider mt={6} mb={2}/>
