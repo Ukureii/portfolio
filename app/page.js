@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useDisclosure } from "react"
+import { useState, useEffect } from "react"
 import Navbar from "./components/layout/Navbar";
 import HomePage from "./components/home/HomePage";
 import Footer from "./components/layout/Footer";

@@ -44,7 +44,7 @@ function CartesGrid() {
               <Skeleton height={{ base: '258px', md: '270px' }} width={{ base: '300px', md: '270px' }} rounded={'lg'} />
               <Skeleton height={{ base: '258px', md: '270px' }} width={{ base: '300px', md: '270px' }} rounded={'lg'} />
             </>
-          ) : ( 
+          ) : (
             cartesData.map((card, index) => (
               <NosCartes key={index} data={card} />
             ))

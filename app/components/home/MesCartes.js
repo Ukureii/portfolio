@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, Box, Image, useColorModeValue, Tooltip, Text, Skeleton, Stack } from '@chakra-ui/react';
+import { Flex, Box, Image, useColorModeValue, Tooltip, Text, Skeleton } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarthEurope } from '@fortawesome/free-solid-svg-icons';
 import AddCard from '../layout/AddCard';
@@ -11,7 +11,7 @@ function CartesGrid() {
   useEffect(() => {
     const fetchCartes = async () => {
       try {
-        const result = await fetch('https://siomende.fr/bird/api/cartes/AllByUser?id=3');
+        const result = await fetch('https://siomende.fr/bird/api/cartes/AllByUser?id=6');
 
         if (result.ok === true) {
           const cartes = await result.json();
@@ -51,7 +51,6 @@ function CartesGrid() {
               <Skeleton height={{ base: '258px', md: '270px' }} width={{ base: '300px', md: '270px' }} rounded={'lg'} />
               <Skeleton height={{ base: '258px', md: '270px' }} width={{ base: '300px', md: '270px' }} rounded={'lg'} />
             </>
-            //<CircularProgress isIndeterminate color='green.300' />
           ) : ( 
             cartesData.map((card, index) => (
               <MesCartes key={index} data={card} />
