@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model CONCERNER {
+  id_point Int
+  id_lien  Int
+  points   points @relation(fields: [id_point], references: [id], onUpdate: Restrict, map: "concerner_ibfk_1")
+  liens    liens  @relation(fields: [id_lien], references: [id], onUpdate: Restrict, map: "concerner_ibfk_2")
+
+  @@id([id_point, id_lien])
+  @@index([id_lien], map: "id_lien")
+}
+
+model cartes {
+  id           Int          @id @default(autoincrement())
+  titre        String?      @db.VarChar(64)
+  dateCrea     DateTime?    @db.Date
+  partagee     Boolean?
+  id_jeune     Int
+  utilisateurs utilisateurs @relation(fields: [id_jeune], references: [id], onUpdate: Restrict, map: "cartes_ibfk_1")
+  liens        liens[]
+
+  @@index([id_jeune], map: "id_jeune")
+}
+
+model graines {
+  id      Int     @id @default(autoincrement())
+  libelle String? @db.VarChar(128)
+  desc    String? @db.VarChar(512)
+  items   items[]
+}
+
+model items {
+  id           Int          @id @default(autoincrement())
+  libelle      String?      @db.VarChar(128)
+  desc         String?      @db.VarChar(512)
+  verrouille   Boolean?
+  id_jeune     Int
+  id_graine    Int
+  id_point     Int          @unique(map: "id_point")
+  utilisateurs utilisateurs @relation(fields: [id_jeune], references: [id], onUpdate: Restrict, map: "items_ibfk_1")
+  graines      graines      @relation(fields: [id_graine], references: [id], onUpdate: Restrict, map: "items_ibfk_2")
+  points       points       @relation(fields: [id_point], references: [id], onUpdate: Restrict, map: "items_ibfk_3")
+
+  @@index([id_graine], map: "id_graine")
+  @@index([id_jeune], map: "id_jeune")
+}
+
+model liens {
+  id          Int         @id @default(autoincrement())
+  couleur     String?     @db.VarChar(6)
+  epaisseur   Int?
+  commentaire String?     @db.VarChar(256)
+  id_carte    Int
+  CONCERNER   CONCERNER[]
+  cartes      cartes      @relation(fields: [id_carte], references: [id], onUpdate: Restrict, map: "liens_ibfk_1")
+
+  @@index([id_carte], map: "id_carte")
+}
+
+model points {
+  id           Int           @id @default(autoincrement())
+  coordX       Decimal?      @db.Decimal(15, 2)
+  coordY       Decimal?      @db.Decimal(15, 2)
+  CONCERNER    CONCERNER[]
+  items        items?
+  utilisateurs utilisateurs?
+}
+
+model utilisateurs {
+  id         Int      @id @default(autoincrement())
+  nom        String?  @db.VarChar(64)
+  prenom     String?  @db.VarChar(64)
+  mail       String?  @db.VarChar(50)
+  motdepasse String?  @db.VarChar(128)
+  avatar     String?  @db.VarChar(1024)
+  id_point   Int      @unique(map: "id_point")
+  cartes     cartes[]
+  items      items[]
+  points     points   @relation(fields: [id_point], references: [id], onUpdate: Restrict, map: "utilisateurs_ibfk_1")
+}

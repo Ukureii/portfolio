@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.background {
+  background: rgb(251,237,255);
+  background: radial-gradient(circle, rgba(251,237,255,1) 0%, rgba(255,255,255,1) 36%);
+}
+
+.slides {
+  background: linear-gradient(to bottom, rgb(239, 239, 243) 0%, rgba(255,255,255,1) 100%);
+  height: 95vh;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  height: full;
+  text-align: center;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.embla__container {
+  display: flex;
+  height: full;
+  justify-content: space-between;
+}
+
+.embla__slide {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 0 10px;
+}
+
+.embla__buttons {
+  position: relative;
+  width: 100%;
+}
+
+.embla__prev {
+  position: absolute;
+  left: 0;
+  margin-left: 24px;
+  transform: translateY(-950%);
+  z-index: 10;
+}
+
+.embla__next {
+  position: absolute;
+  right: 0;
+  margin-right: 24px;
+  transform: translateY(-950%);
+  z-index: 10;
+}
+
+.embla__prev:hover,
+.embla__next:hover {
+  color: #228be6 ;
+}
+
+.embla__next, .embla__prev {
+  transition: 300ms ease;
+}
+
+.title {
+  margin-top: 30px;
+}
+
+.title, .logo {
+  background-image: linear-gradient(45deg, #228be6, #15aabf);
+  background-clip: text;
+  color: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+header{
+  position: sticky;
+  z-index: 30;
+  top: 0;
+}
+
+nav{
+  padding: 8px;
+  border-radius: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.47);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.1px);
+  -webkit-backdrop-filter: blur(4.1px);
+}
+
+.nav__menu-bar{
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  cursor: pointer;
+}
+.nav__menu-bar div{
+  width: 40px;
+  height: 4px;
+  background-color: black;
+  border-radius: 2px;
+}
+.nav__menu-list{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  width: 288px;
+  row-gap: 24px;
+  right: -288px;
+  padding: 24px 16px;
+  transition: all 0.2s;
+  min-height: calc(100vh - 60px);
+  background-color: #f1f1f1;
+}
+.nav__menu-list.active{
+  right: 0;
+}
+.nav__link{
+  font-size: 18px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.center{
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__menu-bar{
+    display: none;
+  }
+  .nav__menu-list{
+    position: unset;
+    flex-direction: row;
+    min-height: fit-content;
+    width: fit-content;
+    column-gap: 24px;
+    align-items: center;
+  }
+  .nav__link::before{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 6px;
+    bottom: -16px;
+    left: 0;
+    background-color: black;
+    transition: all 0.2s;
+  }
+
+  .nav__link:hover:before{
+    width: 100%;
+  }
+}
+
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: rgb(82, 82, 82);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+.diagram-component {
+  width: 400px;
+  height: 400px;
+  border: solid 1px black;
+  background-color: rgb(236, 236, 236);
+}
