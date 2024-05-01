@@ -1,8 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .background {
-    background: rgb(251,237,255);
-    background: radial-gradient(circle, rgba(251,237,255,1) 0%, rgba(255,255,255,1) 36%);
+  background: rgb(251,237,255);
+  background: radial-gradient(circle, rgba(251,237,255,1) 0%, rgba(255,255,255,1) 36%);
+}
+
+.slides {
+  background: linear-gradient(to bottom, rgb(239, 239, 243) 0%, rgba(255,255,255,1) 100%);
+  height: 95vh;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  height: full;
+  text-align: center;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.embla__container {
+  display: flex;
+  height: full;
+  justify-content: space-between;
+}
+
+.embla__slide {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 0 10px;
+}
+
+.embla__buttons {
+  position: relative;
+  width: 100%;
+}
+
+.embla__prev {
+  position: absolute;
+  left: 0;
+  margin-left: 24px;
+  transform: translateY(-950%);
+  z-index: 10;
+}
+
+.embla__next {
+  position: absolute;
+  right: 0;
+  margin-right: 24px;
+  transform: translateY(-950%);
+  z-index: 10;
+}
+
+.embla__prev:hover,
+.embla__next:hover {
+  color: #228be6 ;
+}
+
+.embla__next, .embla__prev {
+  transition: 300ms ease;
 }
 
 .title {
@@ -10,13 +65,9 @@
 }
 
 .title, .logo {
-    background-image: linear-gradient(45deg, #ff8a00, #e52e71);
-    background-clip: text;
-    color: transparent;
-}
-
-.slogan {
-    color: #333333;
+  background-image: linear-gradient(45deg, #228be6, #15aabf);
+  background-clip: text;
+  color: transparent;
 }
 
 * {
@@ -24,7 +75,7 @@
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 a{
@@ -34,17 +85,22 @@ a{
 
 header{
   position: sticky;
-  backdrop-filter: blur(7px);
   z-index: 30;
   top: 0;
 }
 
 nav{
-  padding: 15px;
-  display: flex;
+  padding: 8px;
+  border-radius: 50px;
   padding-left: 20px;
   padding-right: 20px;
-  justify-content: space-between;
+  display: flex;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.47);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.1px);
+  -webkit-backdrop-filter: blur(4.1px);
 }
 
 .nav__menu-bar{
@@ -76,13 +132,9 @@ nav{
   right: 0;
 }
 .nav__link{
-  font-size: 18px; 
+  font-size: 18px;
   position: relative;
-  transition: all 0.2s;
-}
-
-.nav__link:hover{
- font-weight: bold;
+  transition: all 0.5s;
 }
 
 .center{
@@ -113,9 +165,9 @@ nav{
     background-color: black;
     transition: all 0.2s;
   }
-  
+
   .nav__link:hover:before{
-   width: 100%;
+    width: 100%;
   }
 }
 

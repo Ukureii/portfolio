@@ -1,8 +1,9 @@
 'use client'
 import { useState, useEffect } from "react"
-import Navbar from "./components/layout/Navbar";
-import HomePage from "./components/home/HomePage";
-import Footer from "./components/layout/Footer";
+import HomePage from "./components/HomePage";
+import Footer from "./components/Footer";
+import Skills from "./components/Skills";
+import Slides from "./components/Slides";
 
 const ExampleComponent = () => {
   const [isToggle, setIsToggle] = useState(true);
@@ -17,11 +18,10 @@ const ExampleComponent = () => {
 
   return (
     <>
-      <Navbar />  
-      <br/>
-      <HomePage />
-      <br/><br/>
-      <Footer />
+        <HomePage />
+        <Slides />
+        <Skills />
+        <Footer />
     </>
   );
 };
