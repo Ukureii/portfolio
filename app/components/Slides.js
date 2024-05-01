@@ -12,7 +12,7 @@ import {
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 
 const data = [
-  { id: 1, title: "Dōmori", env: 'Mobile', description : 'Application de garde d’animaux de compagnie entre particuliers.', tags: ['Java', 'Android Studio', 'MySQL'], imageUrl: '/test.png' },
+  { id: 1, title: "Dōmori", env: 'Mobile', description : 'Application de garde d’animaux de compagnie entre particuliers.', tags: ['Java', 'Android Studio', 'MySQL'], imageUrl: '/doomori.png' },
   { id: 2, title: "Bird", env: 'Web', description : 'Site pour cartographier ses projets d\'orientation scolaire et professionnelle.', tags: ['JavaScript', 'NextJS', 'Travail de groupe' ], imageUrl: '/bird.png' },
   { id: 3, title: "Nexus", env: 'Web', description : 'Site de mise en relation pour joueurs de jeux vidéo de même niveau.', tags: ['JavaScript', 'NextJS', 'MySQL'], imageUrl: '/nexus.png' },
   { id: 4, title: "Portfolio", env: 'Web', description : 'Portefolio numérique conçu pour présenter mes projets et compétences.', tags: ['JavaScript', 'NextJS' ], imageUrl: '/portfolio.png' },
