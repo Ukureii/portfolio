@@ -14,7 +14,7 @@ import React from "react";
 
 export default function Hero() {
     return (
-        <Stack px={{ base: 10, md: 20}} pb={'120px'} pt={{base: '0', md: '50px'}}  spacing={6} direction={{ base: 'column', md: 'column', lg: 'row' }} justifyContent={'space-between'}>
+        <Stack px={{ base: 10, md: 20}} pb={'130px'} pt={{base: '0', md: '30px'}}  spacing={6} direction={{ base: 'column', md: 'column', lg: 'row' }} justifyContent={'space-between'}>
             <Stack direction={'column'} justifyContent={'center'} mt={-2}>
                 <Text
                     as={'span'}
