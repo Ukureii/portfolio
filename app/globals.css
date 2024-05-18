@@ -52,12 +52,21 @@
 }
 
 .embla__prev:hover,
-.embla__next:hover {
+.embla__next:hover,
+.btn:hover {
   color: #228be6 ;
 }
 
-.embla__next, .embla__prev {
+.embla__next, .embla__prev, .btn {
   transition: 300ms ease;
+}
+
+.btnIcon {
+  transition: 300ms ease;
+}
+
+.btnIcon:hover {
+  color: #15aabf;
 }
 
 .title {

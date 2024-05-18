@@ -6,9 +6,10 @@ import {
 } from '@chakra-ui/react';
 
 const navLinks = [
-  { name: 'Accueil', path: '/' },
-  { name: 'Projets', path: '/projets' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Accueil', path: '#' },
+  { name: 'Projets', path: '#projets' },
+  { name: 'Compétences', path: '#competences' },
+  { name: 'Contact', path: '#contact' },
   { name: 'CV', path: '/cv' }
 ];
 

@@ -7,9 +7,9 @@ import {
   Heading,
   Text,
   Stack,
-  Image, Tag,
+  Image, Tag, IconButton, Link,
 } from '@chakra-ui/react';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
+import {FaAngleLeft, FaAngleRight, FaGithub} from 'react-icons/fa6';
 
 const data = [
   { id: 1, title: "Dōmori", env: 'Mobile', description : 'Application de garde d’animaux de compagnie entre particuliers.', tags: ['Java', 'Android Studio', 'MySQL'], imageUrl: '/doomori.png' },
@@ -44,7 +44,7 @@ export default function EmblaCarousel() {
                 <Box
                   role={'group'}
                   p={6}
-                  width={'330px'}
+                  width={{ base: '220px', md: '330px', lg: '330px' }}
                   bg={useColorModeValue('white', 'gray.800')}
                   boxShadow={'xl'}
                   rounded={'lg'}
@@ -92,7 +92,7 @@ export default function EmblaCarousel() {
                     <Text color={'gray.500'} fontSize={'sm'} textAlign={"start"}>
                       {item.description}
                     </Text>
-                    <Stack direction="row" spacing={2} mt={2}>
+                    <Stack direction="row" spacing={2} mt={2} visibility={{ base: 'hidden', sm: 'visible', lg: 'visible' }}>
                       {item.tags.map(tag => (
                           <Tag size={'sm'} key={tag} color={'gray.500'} bg={'gray.100'} >
                             {tag}

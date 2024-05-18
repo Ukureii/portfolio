@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
 
-export default function CallToActionWithVideo() {
+export default function Hero() {
   return (
     <Container maxW={'7xl'} mt={{ lg: '-40px' }} mb={{ sm: '20px', md: '40px', lg: '40px' }}>
       <Stack

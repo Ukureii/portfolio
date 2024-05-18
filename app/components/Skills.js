@@ -7,7 +7,6 @@ import { MdDevicesOther } from "react-icons/md";
 import { RiGroupLine } from "react-icons/ri";
 import { BsShieldLock } from "react-icons/bs";
 
-
 const Feature = ({ title, text, icon }) => {
   return (
     <Stack>
@@ -37,42 +36,42 @@ export default function SimpleThreeColumns() {
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         <Feature
           icon={<Icon as={FaCode} w={10} h={10} />}
-          title={'Développement web'}
+          title={'Gérer le patrimoine informatique'}
           text={
             'Développement de sites web en HTML, CSS, PHP, CodeIgniter, JavaScript, React et Next.js'
           }
         />
         <Feature
           icon={<Icon as={FaProjectDiagram} mb={'-1'} w={10} h={10} />}
-          title={'Gestion de projet'}
+          title={'Traiter les demandes d’assistance et d’évolution'}
           text={
             'Gestion de projet en méthode agile. Utilisation de Trello et GitHub'
           }
         />
         <Feature
           icon={<Icon as={MdDevicesOther} w={10} h={10} />}
-          title={'Développement mobile'}
+          title={'Développer la présence en ligne de l’organisation'}
           text={
             'Développement d\'applications mobiles avec Android Studio en Java'
           }
         />
           <Feature
               icon={<Icon as={RiGroupLine} w={10} h={10} />}
-              title={'Travail en équipe'}
+              title={'Travailler en mode projet'}
               text={
                   'Travail en équipe sur des projets de développement web et mobile'
               }
           />
           <Feature
               icon={<Icon as={BsShieldLock} mb={'-1'} w={10} h={10} />}
-              title={'Cybersécurité'}
+              title={'Mise à disposition d\'un service informatique'}
               text={
-                  'Sécurisation d\'application web et mobiles avec des outils comme OWASP ZAP et Burp Suite'
+                  'Sécurisation d\'application web et mobiles avec des outils comme OWASP ZAP'
               }
           />
           <Feature
               icon={<Icon as={FaRegEye} w={10} h={10} />}
-              title={'Veille technologique'}
+              title={'Organiser son développement professionnel'}
               text={
                   'Réalisation d\'une veille technologique sur les nouvelles technologies et les montres connectées.'
               }

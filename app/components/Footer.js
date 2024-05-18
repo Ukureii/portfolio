@@ -6,7 +6,6 @@ import {
     Link,
     useColorModeValue,
     Stack,
-    IconButton
 } from '@chakra-ui/react'
 import Logo from './Logo'
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
@@ -49,9 +48,13 @@ export default function Footer() {
                         Tous droits réservés
                     </Text>
                 </Stack>
-                <Stack justify={'center'} mt={5} direction={'row'} spacing={1}>
-                    <IconButton variant={'ghost'} isRound={true} icon={<FaGithub />} as={Link} href={'https://github.com/Ukureii'} target={"_blank"} />
-                    <IconButton variant={'ghost'} isRound={true} icon={<FaLinkedin />} as={Link} href={'https://fr.linkedin.com/in/ambre-laurent-847129257?trk=people-guest_people_search-card'} target={"_blank"} />
+                <Stack justify="center" mt={5} direction="row" spacing={3}>
+                    <Link href="https://github.com/Ukureii" isExternal>
+                        <button className={'btn'}><FaGithub fontSize={18} /></button>
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/ambre-laurent-847129257/" isExternal>
+                        <button className={'btn'}><FaLinkedin fontSize={18} /></button>
+                    </Link>
                 </Stack>
             </Box>
         </Box>
