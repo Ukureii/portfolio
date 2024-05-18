@@ -26,8 +26,8 @@
 }
 
 .embla__slide {
-  flex: 0 0 calc(25% - 20px); /* Ajuster à 25% pour afficher 4 cartes */
-  margin: 0 10px; /* Espacement entre les cartes */
+  flex: 0 0 calc(25% - 20px);
+  margin: 0 10px;
 }
 
 .embla__buttons {
