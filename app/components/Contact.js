@@ -1,7 +1,7 @@
 import React from 'react';
 import {Stack, Text, Divider, Icon, Flex, Link} from "@chakra-ui/react";
 import {Fragment} from "react";
-import { FaLinkedinIn, FaGithub, FaPhoneFlip, FaEnvelope } from "react-icons/fa6";
+import { FaLinkedinIn, FaGithub, FaPhoneFlip, FaEnvelope, FaIdCardClip } from "react-icons/fa6";
 
 const contactOptions = [
     {
@@ -27,6 +27,12 @@ const contactOptions = [
         value: '06 32 76 29 88',
         link: 'tel:0632762988',
         icon: FaPhoneFlip
+    },
+    {
+        label: 'Curriculum vitæ',
+        value: 'Télécharger en format PDF',
+        link: '/cv_ambre_laurent.pdf',
+        icon: FaIdCardClip
     }
 ];
 
@@ -38,8 +44,8 @@ export default function Contact() {
                     III. Contact
                 </Text>
                 <Stack
-                    spacing={{ base: 6, md: 0 }}
-                    direction={{ base: 'column', md: 'row' }}
+                    spacing={{ base: 6, md: 6, lg: 0}}
+                    direction={{ base: 'column', md: 'column', lg: 'row' }}
                     justifyContent="space-between"
                 >
                     {contactOptions.map((option, index) => (
