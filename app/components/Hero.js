@@ -45,22 +45,24 @@ export default function Hero() {
             Je suis constamment en quête de nouvelles technologies et de défis stimulants dans le domaine de l'informatique.
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
-            <Button
-              h={12}
-              px={5}
-              bg={"blue.400"}
-              color={"white"}
-              bgGradient="linear(to-br, #228be6,#15aabf)"
-              _hover={{ bgGradient: 'linear(to-br, #228be6,#15aabf)', opacity: 0.85, transition: '300ms ease' }}
-              variant="solid"
-              size="lg"
-              rounded="full"
-              fontWeight="bold"
-              href={'/contact'}
-              mb={{ base: 2, sm: 0 }}
-            >
-              <chakra.span>Me contacter</chakra.span>
-            </Button>
+            <Link href={'#contact'}>
+              <Button
+                h={12}
+                px={5}
+                bg={"blue.400"}
+                color={"white"}
+                bgGradient="linear(to-br, #228be6,#15aabf)"
+                _hover={{ bgGradient: 'linear(to-br, #228be6,#15aabf)', opacity: 0.85, transition: '300ms ease' }}
+                variant="solid"
+                size="lg"
+                rounded="full"
+                fontWeight="bold"
+                href={'/contact'}
+                mb={{ base: 2, sm: 0 }}
+              >
+                <chakra.span>Me contacter</chakra.span>
+              </Button>
+            </Link>
             <Flex
               border="1px solid"
               borderColor="blackAlpha.500"
