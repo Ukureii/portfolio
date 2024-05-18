@@ -33,7 +33,7 @@ export default function NavBar() {
   return (
     <>
       <header>
-        <Box className={'nav'} justifyContent={'center'}>
+        <Box className={'nav'} visibility={{base: 'hidden', md: 'visible'}} justifyContent={'center'}>
           <Center h={20}>
             <HStack as={'nav'} display={{ base: 'flex', md: 'flex' }}>
               {navLinks.map(({ name, path }) => (

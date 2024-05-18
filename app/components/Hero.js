@@ -14,7 +14,7 @@ import React from "react";
 
 export default function Hero() {
     return (
-        <Stack px={20} pb={'120px'} pt={'50px'} direction={'row'} justifyContent={'space-between'}>
+        <Stack px={{ base: 10, md: 20}} pb={'120px'} pt={{base: '0', md: '50px'}}  spacing={6} direction={{ base: 'column', md: 'column', lg: 'row' }} justifyContent={'space-between'}>
             <Stack direction={'column'} justifyContent={'center'} mt={-2}>
                 <Text
                     as={'span'}
@@ -24,14 +24,14 @@ export default function Hero() {
                     fontSize={{ base: 'md', sm: 'md', lg: 'xl' }}>
                         Portefolio
                 </Text>
-                <Text fontWeight={600} mt={-6} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
+                <Text fontWeight={600} mt={{ base: '-4', md: '-6' }} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
                     Ambre LAURENT
                 </Text>
-                <Text color={'gray.500'} mb={2}>
+                <Text color={'gray'} fontSize={{ base: 'md', sm: 'md', lg: 'lg' }} mb={2}>
                     Étudiante en BTS SIO au lycée Émile Peytavin, je suis passionnée par le développement web et mobile.
                     Je suis constamment en quête de nouvelles technologies et de défis stimulants dans le domaine de l'informatique.
                 </Text>
-                <Text color={'gray.500'} mb={6}>
+                <Text color={'gray.500'} fontSize={{ base: 'md', sm: 'md', lg: 'lg' }} mb={6}>
                     Je suis passionnée par la photo, la randonnée et les animaux, j'aime explorer la nature et capturer des moments uniques.
                 </Text>
 
@@ -40,6 +40,7 @@ export default function Hero() {
                         <Button
                             h={12}
                             px={5}
+                            w={'full'}
                             bg={"blue.400"}
                             color={"white"}
                             bgGradient="linear(to-br, #228be6,#15aabf)"
@@ -76,8 +77,8 @@ export default function Hero() {
                 alt={'Hero Image'}
                 fit={'cover'}
                 align={'center'}
-                w={'48%'}
-                h={'48%'}
+                mt={{ base: 6, md: 6, lg: 0 }}
+                boxSize={{ base: '100%', md: '100%', lg: '50%' }}
                 src={'/workspace.png'}
             />
         </Stack>

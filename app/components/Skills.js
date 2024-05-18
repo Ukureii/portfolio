@@ -29,11 +29,11 @@ const Feature = ({ title, text, icon }) => {
 
 export default function SimpleThreeColumns() {
   return (
-    <Box p={20} mb={12}>
+    <Box px={{ base: 10, md: 20}} pt={20} mb={12}>
         <Text fontWeight={600} mb={6} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
             II. Compétences
         </Text>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
         <Feature
           icon={<Icon as={FaCode} w={10} h={10} />}
           title={'Gérer le patrimoine informatique'}

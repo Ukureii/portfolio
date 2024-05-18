@@ -14,10 +14,12 @@ import {FaAngleLeft, FaAngleRight} from 'react-icons/fa6';
 
 const data = [
   { id: 1, title: "Dōmori", env: 'Mobile', description : 'Application de garde d’animaux de compagnie entre particuliers.', tags: ['Java', 'Android Studio', 'MySQL'], imageUrl: '/doomori.png' },
-  { id: 2, title: "Bird", env: 'Web', description : 'Site pour cartographier ses projets d\'orientation scolaire et professionnelle.', tags: ['JavaScript', 'NextJS', 'Travail de groupe' ], imageUrl: '/bird.png' },
-  { id: 3, title: "Nexus", env: 'Web', description : 'Site de mise en relation pour joueurs de jeux vidéo de même niveau.', tags: ['JavaScript', 'NextJS', 'MySQL'], imageUrl: '/nexus.png' },
-  { id: 4, title: "Portfolio", env: 'Web', description : 'Portefolio numérique conçu pour présenter mes projets et compétences.', tags: ['JavaScript', 'NextJS' ], imageUrl: '/portfolio.png' },
-  { id: 5, title: "CLD Keys", env: 'Web', description : 'Plateforme de génération de clés SSH pour les clients de CobolCloud.', tags: ['PHP', 'Bootstrap', 'MySQL'], imageUrl: '/cobolcloud.png' }
+  { id: 2, title: "Dōmori API", env: 'Web', description : 'API pour l\'application mobile Dōmori, hébergée sur siomende.fr', tags: ['PHP', 'CodeIgniter4', 'MySQL'], imageUrl: '/doomori.png' },
+  { id: 3, title: "Bird", env: 'Web', description : 'Site pour cartographier ses projets d\'orientation scolaire et professionnelle.', tags: ['JavaScript', 'NextJS', 'Travail de groupe' ], imageUrl: '/bird.png' },
+  { id: 4, title: "Nexus", env: 'Web', description : 'API pour le site web Nexus, hébergée sur siomende.fr', tags: ['PHP', 'CodeIgniter4', 'MySQL'], imageUrl: '/nexus.png' },
+  { id: 5, title: "Nexus API", env: 'Web', description : 'Site de mise en relation pour joueurs de jeux vidéo de même niveau.', tags: ['JavaScript', 'NextJS', 'MySQL'], imageUrl: '/nexus.png' },
+  { id: 6, title: "Portfolio", env: 'Web', description : 'Portefolio numérique conçu pour présenter mes projets et compétences.', tags: ['JavaScript', 'NextJS' ], imageUrl: '/portfolio.png' },
+  { id: 7, title: "CLD Keys", env: 'Web', description : 'Plateforme de génération de clés SSH pour les clients de CobolCloud.', tags: ['PHP', 'Bootstrap', 'MySQL'], imageUrl: '/cobolcloud.png' }
 ];
 
 export default function EmblaCarousel() {
@@ -33,7 +35,7 @@ export default function EmblaCarousel() {
 
   return (
     <div className={"slides"}>
-      <Text fontWeight={600} pt={16} ps={20} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
+      <Text fontWeight={600} pt={16} px={{ base: 10, md: 20}} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
         I. Projets
       </Text>
       <div className="embla">

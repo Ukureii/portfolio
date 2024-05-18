@@ -39,7 +39,7 @@ const contactOptions = [
 export default function Contact() {
     return (
         <>
-            <Stack p={20} mb={5}>
+            <Stack px={{ base: 10, md: 20}} pt={20} mb={16}>
                 <Text fontWeight={600} mb={6} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
                     III. Contact
                 </Text>
