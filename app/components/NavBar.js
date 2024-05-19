@@ -8,7 +8,7 @@ import {
 
 const navLinks = [
   { name: 'Accueil', path: 'accueil' },
-  { name: 'Projets', path: 'projets' },
+  { name: 'Projets', path: 'projects' },
   { name: 'Compétences', path: 'competences' },
   { name: 'Contact', path: 'contact' }
 ];

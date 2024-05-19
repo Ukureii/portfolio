@@ -57,12 +57,16 @@
   color: #228be6 ;
 }
 
-.embla__next, .embla__prev, .btn {
+.embla__next, .embla__prev, .btn, .btnNext, .btnIcon {
   transition: 300ms ease;
 }
 
-.btnIcon {
-  transition: 300ms ease;
+.card {
+  cursor: pointer;
+}
+
+.card:hover .btnNext {
+  transform: translateX(8px);
 }
 
 .btnIcon:hover {

@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from "react"
+import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
@@ -14,9 +15,9 @@ const Accueil = () => {
     );
 };
 
-const Projets = () => {
+const Projects = () => {
     return (
-        <div id="projets">
+        <div id="projects">
             <Slides />
         </div>
     );
@@ -51,8 +52,9 @@ const ExampleComponent = () => {
 
     return (
         <>
+            <NavBar />
             <Accueil />
-            <Projets />
+            <Projects />
             <Competences />
             <Cont />
             <Footer />
