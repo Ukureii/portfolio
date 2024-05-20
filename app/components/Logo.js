@@ -6,7 +6,7 @@ export default function Logo(props) {
     <Box {...props}>
       <Link href={'/'}>
         <Tag size={'lg'} borderRadius={'full'} variant={'ghost'}>
-          <TagLabel className={'logo'} fontSize={'2xl'} fontWeight={'bold'}>Portfolio</TagLabel>
+          <TagLabel className={'logo'} fontSize={'xl'} fontWeight={'bold'}>Portfolio</TagLabel>
         </Tag>
       </Link>
     </Box>

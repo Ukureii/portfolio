@@ -1,12 +1,11 @@
 'use client'
 import React from 'react'
 import {Box, SimpleGrid, Icon, Text, Stack, Flex, Link} from '@chakra-ui/react'
-import { FaCode } from "react-icons/fa6";
 import { FaProjectDiagram, FaRegEye } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaCode, FaArrowRight } from "react-icons/fa6";
 import { MdDevicesOther } from "react-icons/md";
 import { RiGroupLine } from "react-icons/ri";
-import { BsShieldLock } from "react-icons/bs";
+import { LuRocket } from "react-icons/lu";
 
 const Feature = ({ title, text, icon }) => {
   return (
@@ -16,7 +15,7 @@ const Feature = ({ title, text, icon }) => {
         h={16}
         align={'center'}
         justify={'center'}
-        color={'rgba(34,139,230,0.84)'}
+        color={'rgba(34,139,230)'}
         rounded={'full'}
         bg={'gray.100'}
         mb={1}>
@@ -66,7 +65,7 @@ export default function SimpleThreeColumns() {
           }
         />
         <Feature
-          icon={<Icon as={FaProjectDiagram} mb={'-1'} w={10} h={10} />}
+          icon={<Icon as={FaProjectDiagram} mb={'-1'} w={9} h={9} />}
           title={'Traiter les demandes d’assistance et d’évolution'}
           text={
             'Gestion de projet en méthode agile. Utilisation de Trello et GitHub'
@@ -87,7 +86,7 @@ export default function SimpleThreeColumns() {
               }
           />
           <Feature
-              icon={<Icon as={BsShieldLock} mb={'-1'} w={10} h={10} />}
+              icon={<Icon as={LuRocket} w={10} h={10} />}
               title={'Mise à disposition d\'un service informatique'}
               text={
                   'Sécurisation d\'application web et mobiles avec des outils comme OWASP ZAP'

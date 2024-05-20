@@ -11,28 +11,32 @@ import {
 } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
 import React from "react";
+import Logo from "./Logo";
 
 export default function Hero() {
+    const handleContactClick = (e) => {
+        e.preventDefault();
+        const element = document.getElementById('contact');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <Stack px={{ base: 10, md: 20}} pb={'130px'} pt={{base: '0', md: '30px'}}  spacing={6} direction={{ base: 'column', md: 'column', lg: 'row' }} justifyContent={'space-between'}>
             <Stack direction={'column'} justifyContent={'center'} mt={-2}>
-                <Text
-                    as={'span'}
-                    fontWeight={600}
-                    position={'relative'}
-                    className='logo'
-                    fontSize={{ base: 'md', sm: 'md', lg: 'xl' }}>
-                        Portefolio
-                </Text>
+                <Logo ms={-3}/>
                 <Text fontWeight={600} mt={{ base: '-4', md: '-6' }} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
                     Ambre LAURENT
                 </Text>
-                <Text color={'gray'} fontSize={{ base: 'md', sm: 'md', lg: 'lg' }} mb={2}>
+                <Text color={'gray'} fontSize={{ base: 'md', sm: 'md', lg: 'lg' }} mb={1}>
                     Étudiante en BTS SIO au lycée Émile Peytavin, je suis passionnée par le développement web et mobile.
                     Je suis constamment en quête de nouvelles technologies et de défis stimulants dans le domaine de l'informatique.
                 </Text>
                 <Text color={'gray.500'} fontSize={{ base: 'md', sm: 'md', lg: 'lg' }} mb={6}>
-                    Je suis passionnée par la photo, la randonnée et les animaux, j'aime explorer la nature et capturer des moments uniques.
+                    En parallèle, je pratique la photographie et la randonnée.
+                    <br/>
+                    J'aime m'occuper des animaux, explorer la nature et capturer des moments uniques.
                 </Text>
 
                 <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
@@ -49,7 +53,7 @@ export default function Hero() {
                             size="lg"
                             rounded="full"
                             fontWeight="bold"
-                            href={'/contact'}
+                            onClick={handleContactClick}
                             mb={{ base: 2, sm: 0 }}
                         >
                             <chakra.span>Me contacter</chakra.span>

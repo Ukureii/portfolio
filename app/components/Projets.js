@@ -11,7 +11,6 @@ import {
     Tag,
     Flex,
     Icon,
-    Divider,
     Box,
     Link
 } from '@chakra-ui/react';
@@ -19,7 +18,7 @@ import {FaCode} from "react-icons/fa6";
 import {MdDevicesOther} from "react-icons/md";
 import {FaProjectDiagram, FaRegEye} from "react-icons/fa";
 import {RiGroupLine} from "react-icons/ri";
-import {BsShieldLock} from "react-icons/bs";
+import {LuRocket} from "react-icons/lu";
 
 const Projet = ({ title, env, tags, imageUrl }) => {
     return (
@@ -101,18 +100,17 @@ const Projets = () => {
                         h={8}
                         align={'center'}
                         justify={'center'}
-                        color={'rgba(34,139,230,0.84)'}
+                        color={'rgba(34,139,230)'}
                         rounded={'full'}
-                        bg={'gray.100'}
+                        bg={'gray.50'}
                         mb={1}>
                         <Icon as={FaCode} w={5} h={5} />
                     </Flex>
                     <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Gérer le patrimoine informatique</Text>
                 </Stack>
-                <Text mt={-1} color={'gray.500'}>Développement de sites web en HTML, CSS, PHP, CodeIgniter, JavaScript, React et Next.js</Text>
             </Stack>
 
-            <SimpleGrid px={20} pt={5} pb={20} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
+            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
                 <Projet
                     title={'Bird'}
                     env={'Web'}
@@ -152,25 +150,23 @@ const Projets = () => {
             </SimpleGrid>
 
             <Stack px={20}>
-                <Divider mb={2} />
                 <Stack direction={'row'}>
                     <Flex
                         w={8}
                         h={8}
                         align={'center'}
                         justify={'center'}
-                        color={'rgba(34,139,230,0.84)'}
+                        color={'rgba(34,139,230)'}
                         rounded={'full'}
-                        bg={'gray.100'}
+                        bg={'gray.50'}
                         mb={1}>
-                        <Icon as={FaProjectDiagram} mb={'-1'} w={5} h={5} />
+                        <Icon as={FaProjectDiagram} mb={'-1'} w={'18px'} h={'18px'} />
                     </Flex>
                     <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Traiter les demandes d’assistance et d’évolution</Text>
                 </Stack>
-                <Text mt={-2} color={'gray.500'}>Gestion de projet en méthode agile. Utilisation de Trello et GitHub</Text>
             </Stack>
 
-            <SimpleGrid px={20} pt={5} pb={20} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
+            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
                 <Projet
                     title={'Bird'}
                     env={'Web'}
@@ -198,25 +194,23 @@ const Projets = () => {
             </SimpleGrid>
 
             <Stack px={20}>
-                <Divider mb={2} />
                 <Stack direction={'row'}>
                     <Flex
                         w={8}
                         h={8}
                         align={'center'}
                         justify={'center'}
-                        color={'rgba(34,139,230,0.84)'}
+                        color={'rgba(34,139,230)'}
                         rounded={'full'}
-                        bg={'gray.100'}
+                        bg={'gray.50'}
                         mb={1}>
                         <Icon as={MdDevicesOther} w={5} h={5} />
                     </Flex>
                     <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Développer la présence en ligne de l’organisation</Text>
                 </Stack>
-                <Text mt={-2} color={'gray.500'}>Développement d'applications mobiles avec Android Studio en Java</Text>
             </Stack>
 
-            <SimpleGrid px={20} pt={5} pb={20} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
+            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
                 <Projet
                     title={'Bird'}
                     env={'Web'}
@@ -238,25 +232,23 @@ const Projets = () => {
             </SimpleGrid>
 
             <Stack px={20}>
-                <Divider mb={2} />
                 <Stack direction={'row'}>
                     <Flex
                         w={8}
                         h={8}
                         align={'center'}
                         justify={'center'}
-                        color={'rgba(34,139,230,0.84)'}
+                        color={'rgba(34,139,230)'}
                         rounded={'full'}
-                        bg={'gray.100'}
+                        bg={'gray.50'}
                         mb={1}>
                         <Icon as={RiGroupLine} w={5} h={5} />
                     </Flex>
                     <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Travailler en mode projet</Text>
                 </Stack>
-                <Text mt={-2} color={'gray.500'}>Travail en équipe sur des projets de développement web et mobile</Text>
             </Stack>
 
-            <SimpleGrid px={20} pt={5} pb={20} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
+            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
                 <Projet
                     title={'Bird'}
                     env={'Web'}
@@ -290,25 +282,23 @@ const Projets = () => {
             </SimpleGrid>
 
             <Stack px={20}>
-                <Divider mb={2} />
                 <Stack direction={'row'}>
                     <Flex
                         w={8}
                         h={8}
                         align={'center'}
                         justify={'center'}
-                        color={'rgba(34,139,230,0.84)'}
+                        color={'rgba(34,139,230)'}
                         rounded={'full'}
-                        bg={'gray.100'}
+                        bg={'gray.50'}
                         mb={1}>
-                        <Icon as={BsShieldLock} mt={'-1px'} w={5} h={5} />
+                        <Icon as={LuRocket} w={5} h={5} />
                     </Flex>
                     <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Mise à disposition d'un service informatique</Text>
                 </Stack>
-                <Text mt={-2} color={'gray.500'}>Sécurisation d'application web et mobiles avec des outils comme OWASP ZAP</Text>
             </Stack>
 
-            <SimpleGrid px={20} pt={5} pb={20} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
+            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
                 <Projet
                     title={'CLD Keys'}
                     env={'Web'}
@@ -330,22 +320,20 @@ const Projets = () => {
             </SimpleGrid>
 
             <Stack px={20}>
-                <Divider mb={2} />
                 <Stack direction={'row'}>
                     <Flex
                         w={8}
                         h={8}
                         align={'center'}
                         justify={'center'}
-                        color={'rgba(34,139,230,0.84)'}
+                        color={'rgba(34,139,230)'}
                         rounded={'full'}
-                        bg={'gray.100'}
+                        bg={'gray.50'}
                         mb={1}>
                         <Icon as={FaRegEye} w={5} h={5} />
                     </Flex>
                     <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Organiser son développement professionnel</Text>
                 </Stack>
-                <Text mt={-2} color={'gray.500'}>Réalisation d'une veille technologique sur les nouvelles technologies et les montres connectées.</Text>
             </Stack>
 
             <SimpleGrid px={20} pt={5} pb={20} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
