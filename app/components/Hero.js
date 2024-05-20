@@ -49,6 +49,7 @@ export default function Hero() {
                             color={"white"}
                             bgGradient="linear(to-br, #228be6,#15aabf)"
                             _hover={{ bgGradient: 'linear(to-br, #228be6,#15aabf)', opacity: 0.85, transition: '300ms ease' }}
+                            _active={{ bgGradient: 'linear(to-br, #228be6,#15aabf)', opacity: 0.75, transition: '300ms ease' }}
                             variant="solid"
                             size="lg"
                             rounded="full"
