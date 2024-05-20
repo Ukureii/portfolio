@@ -5,16 +5,16 @@ import { FaLinkedinIn, FaGithub, FaPhoneFlip, FaEnvelope, FaIdCardClip } from "r
 
 const contactOptions = [
     {
-        label: 'LinkedIn',
-        value: 'Ambre LAURENT',
-        link: 'https://www.linkedin.com/in/ambre-laurent-847129257/',
-        icon: FaLinkedinIn
-    },
-    {
         label: 'Github',
         value: 'Ambre LRNT',
         link: 'https://github.com/Ukureii',
         icon: FaGithub
+    },
+    {
+        label: 'LinkedIn',
+        value: 'Ambre LAURENT',
+        link: 'https://www.linkedin.com/in/ambre-laurent-847129257/',
+        icon: FaLinkedinIn
     },
     {
         label: 'Adresse mail',
@@ -29,8 +29,8 @@ const contactOptions = [
         icon: FaPhoneFlip
     },
     {
-        label: 'Curriculum vitæ',
-        value: 'Télécharger en format PDF',
+        label: 'CV',
+        value: 'Format PDF',
         link: '/cv_ambre_laurent.pdf',
         icon: FaIdCardClip
     }
