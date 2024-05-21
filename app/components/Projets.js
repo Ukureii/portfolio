@@ -12,7 +12,7 @@ import {
     Flex,
     Icon,
     Box,
-    Link
+    Link,
 } from '@chakra-ui/react';
 import {FaCode} from "react-icons/fa6";
 import {MdDevicesOther} from "react-icons/md";
@@ -20,7 +20,7 @@ import {FaProjectDiagram, FaRegEye} from "react-icons/fa";
 import {RiGroupLine} from "react-icons/ri";
 import {LuRocket} from "react-icons/lu";
 
-const Projet = ({ title, env, tags, imageUrl }) => {
+const Projet = ({ title, link, env, tags, imageUrl }) => {
     return (
         <Card
             w={'100%'}
@@ -43,9 +43,11 @@ const Projet = ({ title, env, tags, imageUrl }) => {
                             <Text mt={'1px'} color={'gray.500'} fontSize={'xs'} textTransform={'uppercase'}>
                                 {env}
                             </Text>
-                            <Heading mt={-2} fontSize={'xl'} fontFamily={'body'} fontWeight={500}>
-                                {title}
-                            </Heading>
+                            <Link href={link} isExternal={true}>
+                                <Heading mt={-2} fontSize={'xl'} fontFamily={'body'} fontWeight={500}>
+                                    {title}
+                                </Heading>
+                            </Link>
                         </Stack>
                     </Stack>
                 </CardBody>
@@ -126,25 +128,13 @@ const Projets = () => {
                 <Projet
                     title={'Dōmori'}
                     env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'MySQL']}
-                    imageUrl={'/doomori.png'}
-                />
-                <Projet
-                    title={'Dōmori API'}
-                    env={'API'}
-                    tags={['PHP', 'CodeIgniter4', 'MySQL']}
+                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/doomori.png'}
                 />
                 <Projet
                     title={'Nexus'}
                     env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'MySQL']}
-                    imageUrl={'/nexus.png'}
-                />
-                <Projet
-                    title={'Nexus API'}
-                    env={'API'}
-                    tags={['PHP', 'CodeIgniter4', 'MySQL']}
+                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/nexus.png'}
                 />
             </SimpleGrid>
@@ -182,13 +172,13 @@ const Projets = () => {
                 <Projet
                     title={'Dōmori'}
                     env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'MySQL']}
+                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/doomori.png'}
                 />
                 <Projet
                     title={'Nexus'}
                     env={'Web'}
-                    tags={['PHP', 'CodeIgniter4', 'MySQL']}
+                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/nexus.png'}
                 />
             </SimpleGrid>
@@ -220,13 +210,13 @@ const Projets = () => {
                 <Projet
                     title={'Dōmori'}
                     env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'MySQL']}
+                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/doomori.png'}
                 />
                 <Projet
                     title={'Nexus'}
                     env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'MySQL']}
+                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/nexus.png'}
                 />
             </SimpleGrid>
@@ -250,6 +240,12 @@ const Projets = () => {
 
             <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
                 <Projet
+                    title={'Auto Formation'}
+                    env={'Recherche'}
+                    tags={['JavaScript', 'COBOL', 'Framework']}
+                    imageUrl={'/work.png'}
+                />
+                <Projet
                     title={'Bird'}
                     env={'Web'}
                     tags={['JavaScript', 'NextJS', 'Travail de groupe' ]}
@@ -264,13 +260,13 @@ const Projets = () => {
                 <Projet
                     title={'Dōmori'}
                     env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'MySQL']}
+                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/doomori.png'}
                 />
                 <Projet
                     title={'Nexus'}
                     env={'Web'}
-                    tags={['PHP', 'CodeIgniter4', 'MySQL']}
+                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/nexus.png'}
                 />
                 <Projet
@@ -308,13 +304,13 @@ const Projets = () => {
                 <Projet
                     title={'Dōmori'}
                     env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'MySQL']}
+                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/doomori.png'}
                 />
                 <Projet
                     title={'Nexus'}
                     env={'Web'}
-                    tags={['PHP', 'CodeIgniter4', 'MySQL']}
+                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/nexus.png'}
                 />
             </SimpleGrid>
@@ -358,7 +354,7 @@ const Projets = () => {
                 <Projet
                     title={'Dōmori'}
                     env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'MySQL']}
+                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/doomori.png'}
                 />
                 <Projet
@@ -370,7 +366,7 @@ const Projets = () => {
                 <Projet
                     title={'Nexus'}
                     env={'Web'}
-                    tags={['PHP', 'CodeIgniter4', 'MySQL']}
+                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
                     imageUrl={'/nexus.png'}
                 />
                 <Projet
@@ -382,8 +378,9 @@ const Projets = () => {
                 <Projet
                     title={'Veille Technologique'}
                     env={'Recherche'}
-                    tags={['Java', 'Android Studio', 'MySQL']}
-                    imageUrl={'/doomori.png'}
+                    link={'https://view.genially.com/664d0537d6662900141b19c2/presentation-veille-technologique'}
+                    tags={['Genially', 'Google Alerts', 'Feedly', 'InoReader']}
+                    imageUrl={'/veille.png'}
                 />
             </SimpleGrid>
         </>
