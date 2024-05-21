@@ -61,44 +61,49 @@ export default function SimpleThreeColumns() {
           icon={<Icon as={FaCode} w={10} h={10} />}
           title={'Gérer le patrimoine informatique'}
           text={
-            'Développement de sites web en HTML, CSS, PHP, CodeIgniter, JavaScript, React et Next.js'
+            'Identifier les ressources numériques, utiliser les référentiels, gérer les habilitations, ' +
+            'assurer la continuité, gérer les sauvegardes et vérifier le respect des règles d’utilisation.'
           }
         />
         <Feature
           icon={<Icon as={FaProjectDiagram} mb={'-1'} w={9} h={9} />}
           title={'Traiter les demandes d’assistance et d’évolution'}
           text={
-            'Gestion de projet en méthode agile. Utilisation de Trello et GitHub'
+            'Collecter, suivre et orienter des demandes, traiter les demandes concernant les services réseau, système et applicatifs.'
           }
         />
         <Feature
           icon={<Icon as={MdDevicesOther} w={10} h={10} />}
           title={'Développer la présence en ligne de l’organisation'}
           text={
-            'Développement d\'applications mobiles avec Android Studio en Java'
+            'Valoriser l\'image sur les médias numériques, référencer et mesurer la visibilité des services en ligne, ' +
+            'et améliorer un site Web.'
           }
         />
-          <Feature
-              icon={<Icon as={RiGroupLine} w={10} h={10} />}
-              title={'Travailler en mode projet'}
-              text={
-                  'Travail en équipe sur des projets de développement web et mobile'
-              }
-          />
-          <Feature
-              icon={<Icon as={LuRocket} w={10} h={10} />}
-              title={'Mise à disposition d\'un service informatique'}
-              text={
-                  'Sécurisation d\'application web et mobiles avec des outils comme OWASP ZAP'
-              }
-          />
-          <Feature
-              icon={<Icon as={FaRegEye} w={10} h={10} />}
-              title={'Organiser son développement professionnel'}
-              text={
-                  'Réalisation d\'une veille technologique sur les nouvelles technologies et les montres connectées.'
-              }
-          />
+        <Feature
+            icon={<Icon as={RiGroupLine} w={10} h={10} />}
+            title={'Travailler en mode projet'}
+            text={
+              'Analyser les objectifs et l’organisation d’un projet, ' +
+              'planifier les activités et évaluer les indicateurs de suivi en analysant les écarts.'
+            }
+        />
+        <Feature
+            icon={<Icon as={LuRocket} w={10} h={10} />}
+            title={'Mise à disposition d\'un service informatique'}
+            text={
+              'Réaliser les tests d’intégration et d’acceptation, ' +
+              'déployer un service et accompagner les utilisateurs dans sa mise en place.'
+            }
+        />
+        <Feature
+            icon={<Icon as={FaRegEye} w={10} h={10} />}
+            title={'Organiser son développement professionnel'}
+            text={
+              'Mettre en place son environnement d’apprentissage personnel, utiliser des outils et stratégies de veille, ' +
+              'gérer son identité professionnelle et développer son projet professionnel.'
+            }
+        />
       </SimpleGrid>
     </Box>
   )

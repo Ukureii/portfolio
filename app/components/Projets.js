@@ -344,10 +344,34 @@ const Projets = () => {
                     imageUrl={'/work.png'}
                 />
                 <Projet
+                    title={'Bird'}
+                    env={'Web'}
+                    tags={['JavaScript', 'NextJS', 'Travail de groupe' ]}
+                    imageUrl={'/bird.png'}
+                />
+                <Projet
+                    title={'CLD Keys'}
+                    env={'Web'}
+                    tags={['PHP', 'Bootstrap', 'MySQL']}
+                    imageUrl={'/cobolcloud.png'}
+                />
+                <Projet
+                    title={'Dōmori'}
+                    env={'Mobile'}
+                    tags={['Java', 'Android Studio', 'MySQL']}
+                    imageUrl={'/doomori.png'}
+                />
+                <Projet
                     title={'LinkedIn'}
                     env={'Réseau social'}
                     tags={['Réseau', 'Identité professionnelle']}
                     imageUrl={'/linkedin.png'}
+                />
+                <Projet
+                    title={'Nexus'}
+                    env={'Web'}
+                    tags={['PHP', 'CodeIgniter4', 'MySQL']}
+                    imageUrl={'/nexus.png'}
                 />
                 <Projet
                     title={'Portfolio'}
