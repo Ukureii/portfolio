@@ -30,7 +30,7 @@ export default function Hero() {
                     Ambre LAURENT
                 </Text>
                 <Text color={'gray'} fontSize={{ base: 'md', sm: 'md', lg: 'lg' }} mb={1}>
-                    Étudiante en BTS SIO au lycée Émile Peytavin, je suis passionnée par le développement web et mobile.
+                    Étudiante en bachelor Concepteur Développeur d'Applications, je suis passionnée par le développement web et mobile.
                     Je suis constamment en quête de nouvelles technologies et de défis stimulants dans le domaine de l'informatique.
                 </Text>
                 <Text color={'gray.500'} fontSize={{ base: 'md', sm: 'md', lg: 'lg' }} mb={6}>
