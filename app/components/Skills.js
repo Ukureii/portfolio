@@ -34,27 +34,6 @@ export default function SimpleThreeColumns() {
             <Text fontWeight={600} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
                 II. Compétences
             </Text>
-            <Link href="/competences">
-                <Box
-                    background={'white'}
-                    visibility={{base: 'hidden', md: 'visible'}}
-                    variant={'outline'}
-                    rounded={'lg'}
-                    h={{base: 8, md: 12}}
-                    mt={{base: 0, md: 1, lg: 3}}
-                    borderWidth={1}
-                    borderColor="gray.200"
-                    className="card"
-                    px={{base: 1, md: 3}}
-                >
-                    <Flex align="center" justify="space-between" h="full">
-                        <Text fontWeight={400} pe={{base: 1, md: 4}} color={'gray.600'} fontSize={{ base: 'sm', sm: 'xl', lg: '2xl' }}>
-                            Voir en détail
-                        </Text>
-                        <Icon className="btnNext" color={'gray.600'} me={2} as={FaArrowRight} w={{base: 3, md: 5}} h={{base: 3, md: 5}} />
-                    </Flex>
-                </Box>
-            </Link>
         </Stack>
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
         <Feature
