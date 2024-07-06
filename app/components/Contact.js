@@ -18,8 +18,8 @@ const contactOptions = [
     },
     {
         label: 'Adresse mail',
-        value: 'laurent.ambre@hotmail.fr',
-        link: 'mailto:laurent.ambre@hotmail.fr',
+        value: 'laurent.ambre72@gmail.com',
+        link: 'mailto:laurent.ambre72@gmail.com',
         icon: FaEnvelope
     },
     {
