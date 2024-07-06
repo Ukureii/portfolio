@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from "react"
+import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
@@ -19,10 +20,19 @@ const ExampleComponent = () => {
 
   return (
       <>
-        <Hero />
-        <Slides />
-        <Skills />
-        <Contact />
+        <NavBar />
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="projets">
+          <Slides />
+        </section>
+        <section id="competences">
+          <Skills />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
         <Footer />
       </>
   );
