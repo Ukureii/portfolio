@@ -2,8 +2,8 @@ import { Box, Button, HStack, Center } from '@chakra-ui/react';
 
 const navLinks = [
   { name: 'Accueil', path: '#hero' },
-  { name: 'Projets', path: '#projets' },
   { name: 'Compétences', path: '#competences' },
+  { name: 'Projets', path: '#projets' },
   { name: 'Contact', path: '#contact' }
 ];
 

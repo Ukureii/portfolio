@@ -20,26 +20,31 @@ const ExampleComponent = () => {
 
   return (
       <>
-        <NavBar />
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="projets">
-          <Slides />
-        </section>
-        <section id="competences">
-          <Skills />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
-        <Footer />
+          <NavBar/>
+
+          <section id="hero">
+              <Hero/>
+          </section>
+
+          <section id="competences">
+              <Skills/>
+          </section>
+
+          <section id="projets">
+              <Slides/>
+          </section>
+
+          <section id="contact">
+              <Contact/>
+          </section>
+
+          <Footer/>
       </>
   );
 };
 
 function Home() {
-  return <ExampleComponent />;
+    return <ExampleComponent/>;
 }
 
 export default Home;

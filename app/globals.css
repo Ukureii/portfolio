@@ -10,11 +10,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.slides {
-  background: linear-gradient(to bottom, rgb(239, 239, 243) 0%, rgba(255,255,255,1) 100%);
-  background-size: cover;
-}
-
 .embla__viewport {
   overflow: hidden;
   height: 100%;
