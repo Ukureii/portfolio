@@ -28,7 +28,11 @@ export default function NavBar() {
       <header>
         <Box className={'nav'} justifyContent={'center'}>
           <Center h={20}>
-            <HStack as={'nav'} display={{ base: 'flex', md: 'flex' }}>
+            <HStack
+              as={'nav'}
+              display={{ base: 'none', md: 'flex' }}
+              pointerEvents={{ base: 'none', md: 'auto' }}
+            >
               {navLinks.map(({ name, path }) => (
                   <NavLink key={name} path={path}>{name}</NavLink>
               ))}
