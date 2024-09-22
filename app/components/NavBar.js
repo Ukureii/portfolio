@@ -31,7 +31,6 @@ export default function NavBar() {
             <HStack
               as={'nav'}
               display={{ base: 'none', md: 'flex' }}
-              pointerEvents={{ base: 'none', md: 'auto' }}
             >
               {navLinks.map(({ name, path }) => (
                   <NavLink key={name} path={path}>{name}</NavLink>
