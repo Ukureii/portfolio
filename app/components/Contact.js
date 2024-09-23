@@ -62,9 +62,11 @@ export default function Contact() {
                                 <Text mt={-1} fontSize="lg" fontWeight="semibold">
                                     {option.label}
                                 </Text>
-                                <Text mt={-2} color={'gray'} fontSize="md" textAlign="center">
-                                    {option.value}
-                                </Text>
+                                <Link href={option.link} isExternal>
+                                    <Text mt={-2} color={'gray'} fontSize="md" textAlign="center">
+                                        {option.value}
+                                    </Text>
+                                </Link>
                             </Stack>
                             {contactOptions.length - 1 !== index && (
                                 <Flex d={{ base: 'none', md: 'flex' }}>

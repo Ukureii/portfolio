@@ -41,12 +41,6 @@ export default function Footer() {
                     <Text pt={6} fontSize={'sm'} textAlign={'center'}>
                         © 2024 Ambre LAURENT
                     </Text>
-                    <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-                        -
-                    </Text>
-                    <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-                        Tous droits réservés
-                    </Text>
                 </Stack>
                 <Stack justify="center" mt={5} direction="row" spacing={3}>
                     <Link href="https://github.com/Ukureii" isExternal>
