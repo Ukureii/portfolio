@@ -48,7 +48,7 @@ const Feature = ({ title, icon, children }) => {
                 bg={'gray.100'}>
                 {icon}
             </Flex>
-            <Text fontWeight={600} fontSize={22} mb={2}>{title}</Text>
+            <Text fontWeight={600} fontSize={{ base: 'md', sm: 'lg', lg: 'xl' }} mb={2}>{title}</Text>
             {children}
         </Stack>
     )
@@ -66,7 +66,7 @@ export default function Skills() {
                 <Feature
                     icon={<Icon as={FaCode} w={10} h={10} />}
                     title={'Langages'}>
-                    <List spacing={3}>
+                    <List spacing={3} color={'gray.600'}>
                         {skills['langages'].map((skill, idx) => (
                             <ListItem key={idx}>
                                 <Flex align="center">
@@ -80,7 +80,7 @@ export default function Skills() {
                 <Feature
                     icon={<Icon as={MdOutlineFilterFrames} w={9} h={9} />}
                     title={'Frameworks'}>
-                    <List spacing={3}>
+                    <List spacing={3} color={'gray.600'}>
                         {skills['frameworks'].map((skill, idx) => (
                             <ListItem key={idx}>
                                 <Flex align="center">
@@ -94,7 +94,7 @@ export default function Skills() {
                 <Feature
                     icon={<Icon as={LuDatabase} w={10} h={10} />}
                     title={'Bases de données'}>
-                    <List spacing={3}>
+                    <List spacing={3} color={'gray.600'}>
                         {skills['bdd'].map((skill, idx) => (
                             <ListItem key={idx}>
                                 <Flex align="center">
@@ -108,7 +108,7 @@ export default function Skills() {
                 <Feature
                     icon={<Icon as={VscTools} w={10} h={10} />}
                     title={'Outils'}>
-                    <List spacing={3}>
+                    <List spacing={3} color={'gray.600'}>
                         {skills['outils'].map((skill, idx) => (
                             <ListItem key={idx}>
                                 <Flex align="center">
