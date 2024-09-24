@@ -31,7 +31,7 @@ const contactOptions = [
     {
         label: 'CV',
         value: 'Format PDF',
-        link: '/cv_ambre_laurent.pdf',
+        link: '/CV_Ambre_LAURENT.pdf',
         icon: FaIdCardClip
     }
 ];
