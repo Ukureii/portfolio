@@ -1,390 +1,115 @@
-import React from 'react';
 import {
-    Stack,
-    Text,
-    Avatar,
-    Card,
-    CardBody,
-    CardFooter,
-    SimpleGrid,
-    Heading,
-    Tag,
-    Flex,
-    Icon,
-    Box,
-    Link,
+  Box,
+  Center,
+  Image,
+  SimpleGrid,
+  Stack,
+  Heading,
+  Text,
+  Flex,
+  Tag,
+  Link,
+  useColorModeValue, Button
 } from '@chakra-ui/react';
-import {FaCode} from "react-icons/fa6";
-import {MdDevicesOther} from "react-icons/md";
-import {FaProjectDiagram, FaRegEye} from "react-icons/fa";
-import {RiGroupLine} from "react-icons/ri";
-import {LuRocket} from "react-icons/lu";
+import React from "react";
+import {FaGithub, FaArrowRight} from "react-icons/fa6";
 
-const Projet = ({ title, link, env, tags, imageUrl }) => {
-    return (
-        <Card
-            w={'100%'}
-            h={'120px'}
-            direction={'row'}
-            overflow='hidden'
-            variant='outline'
-            rounded={'lg'}
-        >
-            <Stack>
-                <CardBody mt={-1}>
-                    <Stack direction={'row'} spacing={4}>
-                        <Avatar
-                            size='md'
-                            objectFit='cover'
-                            src={imageUrl}
-                            alt='Caffe Latte'
-                        />
-                        <Stack direction={'column'}>
-                            <Text mt={'1px'} color={'gray.500'} fontSize={'xs'} textTransform={'uppercase'}>
-                                {env}
-                            </Text>
-                            <Link href={link} isExternal={true}>
-                                <Heading mt={-2} fontSize={'xl'} fontFamily={'body'} fontWeight={500}>
-                                    {title}
-                                </Heading>
-                            </Link>
+const data = [
+  { id: 1, title: "Dōmori", env: 'Mobile', description: 'Application de garde d’animaux de compagnie entre particuliers.', tags: ['Java', 'Android Studio', 'MySQL'], repo: '', plus: '', imageUrl: '/doomori.png' },
+  { id: 2, title: "Dōmori API", env: 'Web', description: 'API pour l\'application mobile de garde d’animaux Dōmori', tags: ['PHP', 'CodeIgniter4', 'MySQL'], repo: '', plus: '', imageUrl: '/doomori.png' },
+  { id: 3, title: "Nexus", env: 'Web', description: 'Site de mise en relation pour joueurs de jeux vidéo de même niveau.', tags: ['PHP', 'CodeIgniter', 'MySQL'], repo: '', plus: '', imageUrl: '/nexus.png' },
+  { id: 4, title: "Bird", env: 'Web', description: 'Site pour cartographier ses projets d\'orientation scolaire et professionnelle.', tags: ['JavaScript', 'Next.js'], repo: '', plus: '', imageUrl: '/bird.png' },
+  { id: 5, title: "Portfolio", env: 'Web', description: 'Portefolio numérique conçu pour présenter mes projets et compétences.', tags: ['JavaScript', 'Next.js'], repo: 'https://github.com/Ukureii/portfolio', plus: '', imageUrl: '/portfolio.png' },
+  { id: 6, title: "CLD Keys", env: 'Web', description: 'Plateforme de génération de clés SSH pour les clients de CobolCloud.', tags: ['PHP', 'Bootstrap', 'MySQL'], repo: '', plus: '', imageUrl: '/cobolcloud.png' }
+];
+
+export default function ProjectsGrid() {
+  return (
+      <Box>
+        <Text fontWeight={600} pt={"150px"} px={{ base: 10, md: 20}} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
+          II. Projets
+        </Text>
+        <Box px={12} >
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3}} spacing={4}>
+            {data.map((item) => (
+                <Center py={12} key={item.id}>
+                  <Box
+                      role={'group'}
+                      p={6}
+                      width={{ base: '330px', md: '330px', lg: '330px' }}
+                      bg={useColorModeValue('white', 'gray.800')}
+                      boxShadow={'xl'}
+                      rounded={'lg'}
+                      pos={'relative'}
+                      zIndex={1}
+                  >
+                    <Box
+                        rounded={'lg'}
+                        mt={-8}
+                        pos={'relative'}
+                        minH={'230px'}
+                        _after={{
+                          transition: 'all .3s ease',
+                          content: '""',
+                          w: 'full',
+                          h: 'full',
+                          pos: 'absolute',
+                          top: 2,
+                          left: 0,
+                          backgroundImage: `url(${item.imageUrl})`,
+                          filter: 'blur(10px)',
+                          zIndex: -1,
+                        }}
+                        _groupHover={{
+                          _after: {
+                            filter: 'blur(18px)',
+                          },
+                        }}
+                    >
+                      <Image
+                          rounded={'lg'}
+                          height={230}
+                          width={282}
+                          objectFit={'cover'}
+                          src={item.imageUrl}
+                          alt="#"
+                      />
+                    </Box>
+                    <Stack pt={10} align={'start'}>
+                      <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
+                        {item.env}
+                      </Text>
+                      <Flex direction="row" justifyContent="space-between" w="full">
+                        <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
+                          {item.title}
+                        </Heading>
+                        <Stack direction="row" spacing={1} mt={1}>
+                          {item.repo && (
+                              <Link href={item.repo} isExternal>
+                                <button className={'btn'}><FaGithub fontSize={21}/></button>
+                              </Link>
+                          )}
+                          {item.plus && (
+                            <Button rightIcon={<FaArrowRight />} size={'xs'} mt={"-1px"} variant={'outline'} rounded={'full'}>Voir plus</Button>
+                          )}
                         </Stack>
-                    </Stack>
-                </CardBody>
-
-                <CardFooter mt={-9}>
-                    <Stack direction="row" spacing={2} mt={2}>
-                        {tags.map(tag => (
-                            <Tag size={'sm'} key={tag} color={'gray.500'} bg={'gray.100'} >
-                                {tag}
+                      </Flex>
+                      <Text color={'gray.500'} fontSize={'sm'} textAlign={"start"}>
+                        {item.description}
+                      </Text>
+                      <Stack direction="row" spacing={2} mt={2}>
+                        {item.tags.map(tag => (
+                            <Tag size={'sm'} key={tag} color={'gray.500'} bg={'gray.100'}>
+                              {tag}
                             </Tag>
                         ))}
+                      </Stack>
                     </Stack>
-                </CardFooter>
-            </Stack>
-        </Card>
-    )
+                  </Box>
+                </Center>
+            ))}
+          </SimpleGrid>
+        </Box>
+      </Box>
+  );
 }
-
-const Projets = () => {
-    return (
-        <>
-            <Stack direction={'row'} px={20} py={8} mb={6} justifyContent={'space-between'}>
-                <Text fontWeight={600} pb={1} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
-                    Mes projets
-                </Text>
-                <Link href="/">
-                    <Box
-                        background={'white'}
-                        visibility={{base: 'hidden', md: 'visible'}}
-                        variant={'outline'}
-                        rounded={'lg'}
-                        h={{base: 8, md: 12}}
-                        mt={{base: 0, md: 1, lg: 3}}
-                        borderWidth={1}
-                        borderColor="gray.200"
-                        className="card"
-                        px={{base: 1, md: 4}}
-                    >
-                        <Flex align="center" justify="space-between" h="full">
-                            <Text fontWeight={400} color={'gray.600'} fontSize={{ base: 'sm', sm: 'xl', lg: '2xl' }}>
-                                Retour
-                            </Text>
-                        </Flex>
-                    </Box>
-                </Link>
-            </Stack>
-
-            <Stack px={20}>
-                <Stack direction={'row'}>
-                    <Flex
-                        w={8}
-                        h={8}
-                        align={'center'}
-                        justify={'center'}
-                        color={'rgba(34,139,230)'}
-                        rounded={'full'}
-                        bg={'gray.50'}
-                        mb={1}>
-                        <Icon as={FaCode} w={5} h={5} />
-                    </Flex>
-                    <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Gérer le patrimoine informatique</Text>
-                </Stack>
-            </Stack>
-
-            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
-                <Projet
-                    title={'Bird'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'Travail de groupe' ]}
-                    imageUrl={'/bird.png'}
-                />
-                <Projet
-                    title={'CLD Keys'}
-                    env={'Web'}
-                    tags={['PHP', 'Bootstrap', 'MySQL']}
-                    imageUrl={'/cobolcloud.png'}
-                />
-                <Projet
-                    title={'Dōmori'}
-                    env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/doomori.png'}
-                />
-                <Projet
-                    title={'Nexus'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/nexus.png'}
-                />
-            </SimpleGrid>
-
-            <Stack px={20}>
-                <Stack direction={'row'}>
-                    <Flex
-                        w={8}
-                        h={8}
-                        align={'center'}
-                        justify={'center'}
-                        color={'rgba(34,139,230)'}
-                        rounded={'full'}
-                        bg={'gray.50'}
-                        mb={1}>
-                        <Icon as={FaProjectDiagram} mb={'-1'} w={'18px'} h={'18px'} />
-                    </Flex>
-                    <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Traiter les demandes d’assistance et d’évolution</Text>
-                </Stack>
-            </Stack>
-
-            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
-                <Projet
-                    title={'Bird'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'Travail de groupe' ]}
-                    imageUrl={'/bird.png'}
-                />
-                <Projet
-                    title={'CLD Keys'}
-                    env={'Web'}
-                    tags={['PHP', 'Bootstrap', 'MySQL']}
-                    imageUrl={'/cobolcloud.png'}
-                />
-                <Projet
-                    title={'Dōmori'}
-                    env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/doomori.png'}
-                />
-                <Projet
-                    title={'Nexus'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/nexus.png'}
-                />
-            </SimpleGrid>
-
-            <Stack px={20}>
-                <Stack direction={'row'}>
-                    <Flex
-                        w={8}
-                        h={8}
-                        align={'center'}
-                        justify={'center'}
-                        color={'rgba(34,139,230)'}
-                        rounded={'full'}
-                        bg={'gray.50'}
-                        mb={1}>
-                        <Icon as={MdDevicesOther} w={5} h={5} />
-                    </Flex>
-                    <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Développer la présence en ligne de l’organisation</Text>
-                </Stack>
-            </Stack>
-
-            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
-                <Projet
-                    title={'Bird'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'Travail de groupe' ]}
-                    imageUrl={'/bird.png'}
-                />
-                <Projet
-                    title={'Dōmori'}
-                    env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/doomori.png'}
-                />
-                <Projet
-                    title={'Nexus'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/nexus.png'}
-                />
-            </SimpleGrid>
-
-            <Stack px={20}>
-                <Stack direction={'row'}>
-                    <Flex
-                        w={8}
-                        h={8}
-                        align={'center'}
-                        justify={'center'}
-                        color={'rgba(34,139,230)'}
-                        rounded={'full'}
-                        bg={'gray.50'}
-                        mb={1}>
-                        <Icon as={RiGroupLine} w={5} h={5} />
-                    </Flex>
-                    <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Travailler en mode projet</Text>
-                </Stack>
-            </Stack>
-
-            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
-                <Projet
-                    title={'Auto Formation'}
-                    env={'Recherche'}
-                    tags={['JavaScript', 'COBOL', 'Framework']}
-                    imageUrl={'/work.png'}
-                />
-                <Projet
-                    title={'Bird'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'Travail de groupe' ]}
-                    imageUrl={'/bird.png'}
-                />
-                <Projet
-                    title={'CLD Keys'}
-                    env={'Web'}
-                    tags={['PHP', 'Bootstrap', 'MySQL']}
-                    imageUrl={'/cobolcloud.png'}
-                />
-                <Projet
-                    title={'Dōmori'}
-                    env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/doomori.png'}
-                />
-                <Projet
-                    title={'Nexus'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/nexus.png'}
-                />
-                <Projet
-                    title={'Portfolio'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS' ]}
-                    imageUrl={'/portfolio.png'}
-                />
-            </SimpleGrid>
-
-            <Stack px={20}>
-                <Stack direction={'row'}>
-                    <Flex
-                        w={8}
-                        h={8}
-                        align={'center'}
-                        justify={'center'}
-                        color={'rgba(34,139,230)'}
-                        rounded={'full'}
-                        bg={'gray.50'}
-                        mb={1}>
-                        <Icon as={LuRocket} w={5} h={5} />
-                    </Flex>
-                    <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Mise à disposition d'un service informatique</Text>
-                </Stack>
-            </Stack>
-
-            <SimpleGrid px={20} pt={5} pb={'100px'} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
-                <Projet
-                    title={'CLD Keys'}
-                    env={'Web'}
-                    tags={['PHP', 'Bootstrap', 'MySQL']}
-                    imageUrl={'/cobolcloud.png'}
-                />
-                <Projet
-                    title={'Dōmori'}
-                    env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/doomori.png'}
-                />
-                <Projet
-                    title={'Nexus'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/nexus.png'}
-                />
-            </SimpleGrid>
-
-            <Stack px={20}>
-                <Stack direction={'row'}>
-                    <Flex
-                        w={8}
-                        h={8}
-                        align={'center'}
-                        justify={'center'}
-                        color={'rgba(34,139,230)'}
-                        rounded={'full'}
-                        bg={'gray.50'}
-                        mb={1}>
-                        <Icon as={FaRegEye} w={5} h={5} />
-                    </Flex>
-                    <Text fontWeight={600} fontSize={'2xl'} ms={1} mt={'-2px'}>Organiser son développement professionnel</Text>
-                </Stack>
-            </Stack>
-
-            <SimpleGrid px={20} pt={5} pb={20} spacing={4} columns={{ base: 1, md: 2, lg: 3 }}>
-                <Projet
-                    title={'Auto Formation'}
-                    env={'Recherche'}
-                    tags={['JavaScript', 'COBOL', 'Framework']}
-                    imageUrl={'/work.png'}
-                />
-                <Projet
-                    title={'Bird'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'Travail de groupe' ]}
-                    imageUrl={'/bird.png'}
-                />
-                <Projet
-                    title={'CLD Keys'}
-                    env={'Web'}
-                    tags={['PHP', 'Bootstrap', 'MySQL']}
-                    imageUrl={'/cobolcloud.png'}
-                />
-                <Projet
-                    title={'Dōmori'}
-                    env={'Mobile'}
-                    tags={['Java', 'Android Studio', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/doomori.png'}
-                />
-                <Projet
-                    title={'LinkedIn'}
-                    env={'Réseau social'}
-                    tags={['Réseau', 'Identité professionnelle']}
-                    imageUrl={'/linkedin.png'}
-                />
-                <Projet
-                    title={'Nexus'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS', 'PHP', 'CodeIgniter4', 'MySQL']}
-                    imageUrl={'/nexus.png'}
-                />
-                <Projet
-                    title={'Portfolio'}
-                    env={'Web'}
-                    tags={['JavaScript', 'NextJS' ]}
-                    imageUrl={'/portfolio.png'}
-                />
-                <Projet
-                    title={'Veille Technologique'}
-                    env={'Recherche'}
-                    link={'https://view.genially.com/664d0537d6662900141b19c2/presentation-veille-technologique'}
-                    tags={['Genially', 'Google Alerts', 'Feedly', 'InoReader']}
-                    imageUrl={'/veille.png'}
-                />
-            </SimpleGrid>
-        </>
-    );
-};
-
-export default Projets;

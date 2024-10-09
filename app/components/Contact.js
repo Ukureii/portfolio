@@ -31,7 +31,7 @@ const contactOptions = [
     {
         label: 'CV',
         value: 'Format PDF',
-        link: '/cv_ambre_laurent.pdf',
+        link: '/CV_Ambre_LAURENT.pdf',
         icon: FaIdCardClip
     }
 ];
@@ -39,8 +39,8 @@ const contactOptions = [
 export default function Contact() {
     return (
         <>
-            <Stack px={{ base: 10, md: 20}} pt={20} mb={16}>
-                <Text fontWeight={600} mb={6} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
+            <Stack px={{ base: 10, md: 20}} mb={"80px"}>
+                <Text fontWeight={600} mb={6} pt={"140px"} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
                     III. Contact
                 </Text>
                 <Stack
@@ -56,15 +56,15 @@ export default function Contact() {
                                 alignItems="center"
                                 px={3}
                             >
-                                <Link href={option.link} isExternal>
-                                    <Icon className={'btnIcon'} as={option.icon} w={10} h={10} color={'#228be6'}/>
-                                </Link>
-                                <Text mt={-1} fontSize="lg" fontWeight="semibold">
+                                <Icon as={option.icon} w={10} h={10} color={'#228be6'}/>
+                                <Text mt={1} fontSize="lg" fontWeight="semibold">
                                     {option.label}
                                 </Text>
-                                <Text mt={-2} color={'gray'} fontSize="md" textAlign="center">
-                                    {option.value}
-                                </Text>
+                                <Link href={option.link} isExternal>
+                                    <Text mt={-2} color={'gray'} fontSize="md" textAlign="center">
+                                        {option.value}
+                                    </Text>
+                                </Link>
                             </Stack>
                             {contactOptions.length - 1 !== index && (
                                 <Flex d={{ base: 'none', md: 'flex' }}>

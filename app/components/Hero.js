@@ -23,10 +23,10 @@ export default function Hero() {
     };
 
     return (
-        <Stack px={{ base: 10, md: 20}} pb={'130px'} pt={{base: '0', md: '30px'}}  spacing={6} direction={{ base: 'column', md: 'column', lg: 'row' }} justifyContent={'space-between'}>
+        <Stack px={{ base: 10, md: 20}} pb={'120px'} pt={{base: '0', md: '50px'}}  spacing={6} direction={{ base: 'column', md: 'column', lg: 'row' }} justifyContent={'space-between'}>
             <Stack direction={'column'} justifyContent={'center'} mt={-2}>
                 <Logo ms={-3}/>
-                <Text fontWeight={600} mt={{ base: '-4', md: '-6' }} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
+                <Text fontWeight={600} mt={{ base: '-4', md: '-6', lg: "-7" }} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
                     Ambre LAURENT
                 </Text>
                 <Text color={'gray'} fontSize={{ base: 'md', sm: 'md', lg: 'lg' }} mb={1}>
@@ -40,7 +40,7 @@ export default function Hero() {
                 </Text>
 
                 <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
-                    <Link href={'#contact'}>
+                    <Link href='#contact'>
                         <Button
                             h={12}
                             px={5}
@@ -83,7 +83,7 @@ export default function Hero() {
                 fit={'cover'}
                 align={'center'}
                 mt={{ base: 6, md: 6, lg: 0 }}
-                boxSize={{ base: '100%', md: '100%', lg: '50%' }}
+                boxSize={{ base: '100%', md: '100%', lg: '48%' }}
                 src={'/workspace.png'}
             />
         </Stack>

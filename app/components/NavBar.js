@@ -1,15 +1,10 @@
-import {
-  Box,
-  Button,
-  HStack,
-  Center,
-} from '@chakra-ui/react';
+import { Box, Button, HStack, Center } from '@chakra-ui/react';
 
 const navLinks = [
-  { name: 'Accueil', path: '/' },
-  { name: 'Projets', path: '/projets' },
-  { name: 'Contact', path: '/contact' },
-  { name: 'CV', path: '/cv' }
+  { name: 'Accueil', path: '#hero' },
+  { name: 'Compétences', path: '#competences' },
+  { name: 'Projets', path: '#projets' },
+  { name: 'Contact', path: '#contact' }
 ];
 
 const NavLink = (props) => {
@@ -17,8 +12,8 @@ const NavLink = (props) => {
   return (
       <Button
           as="a"
-          _hover={{ bg: "rgba(34, 139, 230, 0.05)"}}
-          _active={{ bg: "rgba(34, 139, 230, 0.1)"}}
+          _hover={{ bg: "rgba(34, 139, 230, 0.05)" }}
+          _active={{ bg: "rgba(34, 139, 230, 0.1)" }}
           rounded={'full'}
           fontWeight={'normal'}
           variant={'ghost'}
@@ -29,20 +24,20 @@ const NavLink = (props) => {
 };
 
 export default function NavBar() {
-
   return (
-      <>
-        <header>
-          <Box className={'nav'} justifyContent={'center'}>
-            <Center h={20}>
-              <HStack as={'nav'} display={{ base: 'flex', md: 'flex' }}>
-                {navLinks.map(({ name, path }) => (
-                    <NavLink key={name} path={path} >{name}</NavLink>
-                ))}
-              </HStack>
-            </Center>
-          </Box>
-        </header>
-      </>
+      <header>
+        <Box className={'nav'} justifyContent={'center'}>
+          <Center h={20}>
+            <HStack
+              as={'nav'}
+              display={{ base: 'none', md: 'flex' }}
+            >
+              {navLinks.map(({ name, path }) => (
+                  <NavLink key={name} path={path}>{name}</NavLink>
+              ))}
+            </HStack>
+          </Center>
+        </Box>
+      </header>
   );
 }
