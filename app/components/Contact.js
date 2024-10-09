@@ -56,10 +56,8 @@ export default function Contact() {
                                 alignItems="center"
                                 px={3}
                             >
-                                <Link href={option.link} isExternal>
-                                    <Icon className={'btnIcon'} as={option.icon} w={10} h={10} color={'#228be6'}/>
-                                </Link>
-                                <Text mt={-1} fontSize="lg" fontWeight="semibold">
+                                <Icon as={option.icon} w={10} h={10} color={'#228be6'}/>
+                                <Text mt={1} fontSize="lg" fontWeight="semibold">
                                     {option.label}
                                 </Text>
                                 <Link href={option.link} isExternal>
