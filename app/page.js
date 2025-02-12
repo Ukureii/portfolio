@@ -5,7 +5,6 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
-import Slides from "./components/Slides";
 import Projets from "./components/Projets";
 
 const ExampleComponent = () => {
