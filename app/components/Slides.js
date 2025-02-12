@@ -14,7 +14,7 @@ import {FaAngleLeft, FaAngleRight} from 'react-icons/fa6';
 
 const data = [
   { id: 1, title: "Dōmori", env: 'Mobile', description : 'Application de garde d’animaux de compagnie entre particuliers.', tags: ['Java', 'Android Studio', 'MySQL'], imageUrl: '/doomori.png' },
-  { id: 2, title: "Dōmori API", env: 'Web', description : 'API pour l\'application mobile Dōmori', tags: ['PHP', 'CodeIgniter4', 'MySQL'], imageUrl: '/doomori.png' },
+  { id: 2, title: "Dōmori API", env: 'Web', description : 'API pour l\'application mobile de garde d’animaux Dōmori', tags: ['PHP', 'CodeIgniter4', 'MySQL'], imageUrl: '/doomori.png' },
   { id: 3, title: "Bird", env: 'Web', description : 'Site pour cartographier ses projets d\'orientation scolaire et professionnelle.', tags: ['JavaScript', 'NextJS', 'Travail de groupe' ], imageUrl: '/bird.png' },
   { id: 4, title: "Nexus", env: 'Web', description : 'Site de mise en relation pour joueurs de jeux vidéo de même niveau.', tags: ['PHP', 'CodeIgniter', 'MySQL'], imageUrl: '/nexus.png' },
   { id: 5, title: "Portfolio", env: 'Web', description : 'Portefolio numérique conçu pour présenter mes projets et compétences.', tags: ['JavaScript', 'NextJS' ], imageUrl: '/portfolio.png' },
@@ -34,8 +34,8 @@ export default function EmblaCarousel() {
 
   return (
     <div className={"slides"}>
-      <Text fontWeight={600} pt={16} px={{ base: 10, md: 20}} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
-        I. Projets
+      <Text fontWeight={600} pt={"150px"} px={{ base: 10, md: 20}} fontSize={{ base: 'xl', sm: '4xl', lg: '5xl' }}>
+        II. Projets
       </Text>
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
@@ -57,7 +57,7 @@ export default function EmblaCarousel() {
                       rounded={'lg'}
                       mt={-8}
                       pos={'relative'}
-                      height={'230px'}
+                      minH={'230px'}
                       _after={{
                         transition: 'all .3s ease',
                         content: '""',
